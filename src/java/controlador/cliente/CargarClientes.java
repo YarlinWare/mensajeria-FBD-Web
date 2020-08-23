@@ -62,7 +62,8 @@ public class CargarClientes extends HttpServlet {
                 response.sendRedirect("editarcliente.jsp"); 
             }
             if(opc.equals("delete")){
-                clienteDB.borrarCliente(c);
+                //clienteDB.borrarCliente(c);
+                clienteDB.borrarCliente(num_doc, tipo_doc);
                 response.sendRedirect("listarclientes.jsp");
             }
             

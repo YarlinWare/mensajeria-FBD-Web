@@ -65,8 +65,8 @@ public class DBCliente {
                     + " n_primer_apellido,"
                     + " n_segundo_apellido,"
                     + " o_genero,"
-                    + " f_nacimiento,"
-                    + " n_correo"
+                    + " n_correo ,"
+                    + "f_nacimiento "
                     + " values(?,?,?,?,?,?,?,?,?)");
             pstm.setLong(1, c.getK_num_documento());
             pstm.setString(2, c.getK_tipo_documento());
@@ -75,9 +75,9 @@ public class DBCliente {
             pstm.setString(5, c.getN_primer_apellido());
             pstm.setString(6, c.getN_segundo_apellido());
             pstm.setString(7, c.getO_genero());
-            pstm.setString(8, c.getF_nacimiento());
-            //pstm.setString(8, fecha);
-            pstm.setString(9, c.getN_correo());
+            pstm.setString(8, c.getN_correo());
+            pstm.setString(9, c.getF_nacimiento());
+            //pstm.setString(9, fecha);
             
 
             pstm.executeUpdate();
@@ -94,23 +94,23 @@ public class DBCliente {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("UPDATE cliente"
                     + " SET "
-                    + " n_primer_nombre= ? "
-                    + " n_segundo_nombre= ? "
-                    + "n_primer_apellido= ? "
-                    + "n_segundo_apellido= ? "
-                    + "o_genero= ? "
-                    + "f_nacimiento= ? "
-                    + "n_correo= ? "
+                    + " n_primer_nombre= ?, "
+                    + " n_segundo_nombre= ?, "
+                    + " n_primer_apellido= ?,"
+                    + " n_segundo_apellido= ?,"
+                    + " o_genero= ?, "
+                    + " n_correo= ? "
+                    //+ " f_nacimiento= ? "
                     + " WHERE  k_num_documento = ? AND k_tipo_documento = ?");
             pstm.setString(1, c.getN_primer_nombre());
             pstm.setString(2, c.getN_segundo_nombre());
             pstm.setString(3, c.getN_primer_apellido());
             pstm.setString(4, c.getN_segundo_apellido());
             pstm.setString(5, c.getO_genero());
-            pstm.setString(6, c.getF_nacimiento());
-            pstm.setString(7, c.getN_correo());
-            pstm.setLong(8, c.getK_num_documento());
-            pstm.setString(9, c.getK_tipo_documento());
+            pstm.setString(6, c.getN_correo());
+            //pstm.setString(1, c.getF_nacimiento());
+            pstm.setLong(7, c.getK_num_documento());
+            pstm.setString(8, c.getK_tipo_documento());
             
             pstm.executeUpdate();
 
@@ -127,13 +127,24 @@ public class DBCliente {
 
             pstm.setLong(1, c.getK_num_documento());
             pstm.setString(2, c.getK_tipo_documento());
-            pstm.setString(3, c.getN_primer_nombre());
-            pstm.setString(4, c.getN_segundo_nombre());
-            pstm.setString(5, c.getN_primer_apellido());
-            pstm.setString(6, c.getN_segundo_apellido());
-            pstm.setString(7, c.getO_genero());
-            pstm.setString(8, c.getF_nacimiento());
-            pstm.setString(9, c.getN_correo());
+
+            pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+    }
+     
+     public void borrarCliente(long k_num_documento,String k_tipo_documento) {
+
+        try {
+            PreparedStatement pstm = cn.getConexion().prepareStatement("DELETE FROM cliente "
+                    + "WHERE  k_num_documento = ? AND k_tipo_documento = ?");
+
+            pstm.setLong(1, k_num_documento);
+            pstm.setString(2, k_tipo_documento);
 
             pstm.executeUpdate();
 

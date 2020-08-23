@@ -117,7 +117,7 @@
             </tr>
             <tr>
                 <td>Correo</td>
-                <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Cliente)session.getAttribute("cliente")).getN_correo()%>"></td>
+                <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Cliente)session.getAttribute("cliente")).getO_genero()%>"></td>
             </tr>
             <tr>
                 <td>Fecha de nacimiento</td>
@@ -125,7 +125,7 @@
             </tr>
             <tr>
                 <td>Género</td>
-                <td><input type="text" id="n_correo" name="n_correo" value="<%= ((Cliente)session.getAttribute("cliente")).getO_genero()%>"></td>
+                <td><input type="text" id="n_correo" name="n_correo" value="<%= ((Cliente)session.getAttribute("cliente")).getN_correo()%>"></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="button" class="btn btn-success" value="Aceptar" onclick="submit();"></td>

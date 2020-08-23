@@ -115,7 +115,7 @@
                         <td><%= cliente.getString("n_correo") %></td>
                         <td class="links">
                             <a href="CargarCliente?opc=edit&num_doc=<%= cliente.getString("k_num_documento") %>&tipo_doc=<%= cliente.getString("k_tipo_documento") %>">Editar</a>
-                            <a href="CargarCliente?opc=delete&num_doc=<%= cliente.getString("k_num_documento") %>">Borrar</a>
+                            <a href="CargarCliente?opc=delete&num_doc=<%= cliente.getString("k_num_documento") %>&tipo_doc=<%= cliente.getString("k_tipo_documento") %>">Borrar</a>
                         </td>
                     </tr>
                 <% }%>
