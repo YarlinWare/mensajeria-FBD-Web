@@ -66,8 +66,9 @@ public class DBCliente {
                     + " n_segundo_apellido,"
                     + " o_genero,"
                     + " n_correo ,"
-                    + "f_nacimiento "
-                    + " values(?,?,?,?,?,?,?,?,?)");
+                    //+ "f_nacimiento "
+                    + " values(?,?,?,?,?,?,?,?)");
+            
             pstm.setLong(1, c.getK_num_documento());
             pstm.setString(2, c.getK_tipo_documento());
             pstm.setString(3, c.getN_primer_nombre());
@@ -76,13 +77,10 @@ public class DBCliente {
             pstm.setString(6, c.getN_segundo_apellido());
             pstm.setString(7, c.getO_genero());
             pstm.setString(8, c.getN_correo());
-            pstm.setString(9, c.getF_nacimiento());
-            //pstm.setString(9, fecha);
-            
+            //pstm.setString(9, c.getF_nacimiento());
+            //pstm.setString(9, fecha);           
 
             pstm.executeUpdate();
-
-
         } catch (SQLException e) {
             System.out.println(e);
         }

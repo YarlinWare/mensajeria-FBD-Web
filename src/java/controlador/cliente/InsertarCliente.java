@@ -67,7 +67,7 @@ public class InsertarCliente extends HttpServlet {
             c.setN_primer_apellido("apellido 1");
             c.setN_segundo_apellido("apellido 2");
             c.setO_genero("genero");
-            c.setF_nacimiento("2012/12/20");
+            //c.setF_nacimiento("2012-12-20");
             c.setN_correo("nombre@gmail.com");
             
             clienteDB.insertarCliente(c);            
