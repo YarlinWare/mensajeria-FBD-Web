@@ -8,7 +8,6 @@ package controlador.cliente;
 import database.DBCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +34,11 @@ public class InsertarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         Cliente c = new Cliente();
         DBCliente clienteDB = new DBCliente();
         try {
-            c.setK_num_documento(Integer.parseInt(request.getParameter("k_num_documento")));
+            /*c.setK_num_documento(Integer.parseInt(request.getParameter("k_num_documento")));
             c.setK_tipo_documento(request.getParameter("k_tipo_documento"));
             c.setN_primer_nombre(request.getParameter("n_primer_nombre"));
             c.setN_segundo_nombre(request.getParameter("n_segundo_nombre"));
@@ -46,11 +46,20 @@ public class InsertarCliente extends HttpServlet {
             c.setN_segundo_apellido(request.getParameter("n_segundo_apellido"));
             c.setO_genero(request.getParameter("o_genero"));
             c.setF_nacimiento(request.getParameter("f_nacimiento"));
-            c.setN_correo(request.getParameter("n_correo"));
+            c.setN_correo(request.getParameter("n_correo"));*/
+            c.setK_num_documento(234435);
+            c.setK_tipo_documento("CE");
+            c.setN_primer_nombre("nombre");
+            c.setN_segundo_nombre("nombre");
+            c.setN_primer_apellido("apellido");
+            c.setN_segundo_apellido("apellido");
+            c.setO_genero("genero");
+            c.setF_nacimiento("2012/12/20");
+            c.setN_correo("nombre@gmail.com");
             
             clienteDB.insertarCliente(c);
             
-            response.sendRedirect("listarclientes.jsp");
+            response.sendRedirect("listaclientes.jsp");
         }finally {            
             out.close();
         }

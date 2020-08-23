@@ -24,11 +24,17 @@ public class DBServicio {
     }
     public ResultSet getServicioById(int k_id_servicio,int k_id_tipo_paquete) throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement(" "
-                + "SELECT * FROM servicio "
-                + "WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ?");
+                + " SELECT "
+                + " k_id_tipo_paquete,"
+                + " f_fecha,"
+                + " f_hora,"
+                + " v_valor_servicio"
+                + " FROM servicio "
+                + " WHERE  k_id_servicio = ?");
+                //+ "WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ?");
        
         pstm.setInt(1,k_id_servicio);
-        pstm.setInt(2,k_id_tipo_paquete);  
+        //pstm.setInt(2,k_id_tipo_paquete);  
         ResultSet res = pstm.executeQuery();
         /*
          res.close();	
@@ -64,11 +70,11 @@ public class DBServicio {
             pstm.setInt(2, s.getK_id_tipo_paquete());
             pstm.setInt(3, s.getK_num_documento_usuario());
             pstm.setString(4, s.getK_tipo_documento_usuario());
-            pstm.setString(5, s.getK_num_documento_mensajero());
+            pstm.setInt(5, s.getK_num_documento_mensajero());
             pstm.setString(6, s.getK_tipo_documento_mensajero());
             pstm.setString(7, s.getF_fecha());
             pstm.setString(8, s.getF_hora());
-            pstm.setString(9, s.getV_valor_servicio());
+            pstm.setInt(9, s.getV_valor_servicio());
             
 
             pstm.executeUpdate();
@@ -91,11 +97,11 @@ public class DBServicio {
                     + " f_hora= ? "
                     + " v_valor_servicio= ? "
                     + " WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ? ");
-            pstm.setString(1, s.getK_num_documento_mensajero());
+            pstm.setInt(1, s.getK_num_documento_mensajero());
             pstm.setString(2, s.getK_tipo_documento_mensajero());
             pstm.setString(3, s.getF_fecha());
             pstm.setString(4, s.getF_hora());
-            pstm.setString(5, s.getV_valor_servicio());
+            pstm.setInt(5, s.getV_valor_servicio());
             pstm.setInt(6, s.getK_id_servicio());
             pstm.setInt(7, s.getK_id_tipo_paquete());
             

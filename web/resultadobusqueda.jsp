@@ -66,16 +66,14 @@
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.jsp">Solicitar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.jsp">Consultar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
-            <!--<li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
-            </li>-->
+            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="admin.jsp">Mensajeros</a>
+              <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
         </div>
@@ -83,15 +81,21 @@
     </nav>
 
     <div class="container">
-             <input type="hidden" id="txtId" name="txtId" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%>">
+             
         <table  class="table table-striped table-dark">
+            
             <tr>
-                <td>Titulo</td>
-                <td><input type="text" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%>"></td>
+                <td>Fecha</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_tipo_documento_usuario()%></td>
+            </tr> 
+            <tr>
+                <td>ID Servicio</td>
+                <td><input type="number" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%>"></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="button" class="btn btn-success" value="Aceptar" onclick="submit();"></td>
-            </tr>            
+                <td>Tipo paquete</td>
+                <td><input type="number" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%>"></td>
+            </tr>         
         </table>
     </div>
     <!-- Pié de página -->
@@ -118,11 +122,11 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="#" class="link">Política de privacidad</a> ·
+        	<a href="#" class="link">Aviso legal</a> ·
+        	<a href="#" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Las Delicias 2020</p>
+        <p class="m-0 mbt1">&copy; Mensajería FBD</p>
       </div>
 	</footer>
 

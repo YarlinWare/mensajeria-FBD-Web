@@ -47,15 +47,19 @@ public class ConsultarServicio extends HttpServlet {
             
         try {
             if (res.next()){
-                s.setK_id_servicio(Integer.parseInt("k_id_servicio"));
-                s.setK_id_tipo_paquete(Integer.parseInt("k_id_tipo_paquete"));
-                s.setK_num_documento_usuario(Integer.parseInt("k_num_documento_usuario"));
-                s.setK_tipo_documento_usuario("k_tipo_documento_usuario");
-                s.setK_num_documento_mensajero("k_num_documento_mensajero");
-                s.setK_tipo_documento_mensajero("k_tipo_documento_mensajero");
-                s.setF_fecha("f_fecha");
-                s.setF_hora("f_hora");
-                // s.getV_valor_servicio("v_valor_servicio");   
+                s.setK_id_servicio(Integer.parseInt(request.getParameter("k_id_servicio")));
+                s.setK_id_tipo_paquete(Integer.parseInt(request.getParameter("k_id_tipo_paquete")));
+                int doc_usuario = (Integer.parseInt(request.getParameter("k_num_documento_usuario")));
+                s.setK_num_documento_usuario(doc_usuario);
+                s.setK_tipo_documento_usuario(request.getParameter("k_tipo_documento_usuario"));
+                if (request.getParameter("k_num_documento_mensajero") != "") {                    
+                    int doc_mensajero = Integer.parseInt(request.getParameter("k_num_documento_mensajero"));
+                    s.setK_num_documento_mensajero(doc_mensajero);
+                    s.setK_tipo_documento_mensajero(request.getParameter("k_tipo_documento_mensajero"));
+                }
+                s.setF_fecha(request.getParameter("f_fecha"));
+                s.setF_hora(request.getParameter("f_hora"));
+                s.setV_valor_servicio(Integer.parseInt(request.getParameter("k_tipo_documento_mensajero")));
                 
             }            
             request.getSession().setAttribute("servicio", s);        

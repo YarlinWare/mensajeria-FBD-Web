@@ -64,16 +64,14 @@
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.jsp">Solicitar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.jsp">Consultar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
-            <!--<li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
-            </li>-->
+            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="admin.jsp">Mensajeros</a>
+              <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
         </div>
@@ -86,11 +84,11 @@
         <table  class="table table-striped table-dark">
             <tr>
                 <td>ID Servicio</td>
-                <td><input type="text" id="id_servicio" name="id_servicio" value=""></td>
+                <td><input type="number" id="id_servicio" name="id_servicio" value=""></td>
             </tr>
             <tr>
                 <td>Tipo Paquete</td>
-                <td><input type="text" id="id_tipo_paquete" name="id_tipo_paquete" value=""></td>
+                <td><input type="number" id="id_tipo_paquete" name="id_tipo_paquete" value=""></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="button" class="btn btn-success" value="Buscar" onclick="submit();"></td>
@@ -122,11 +120,11 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="#" class="link">Política de privacidad</a> ·
+        	<a href="#" class="link">Aviso legal</a> ·
+        	<a href="#" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Las Delicias 2020</p>
+        <p class="m-0 mbt1">&copy; Mensajería FBD</p>
       </div>
 	</footer>
 

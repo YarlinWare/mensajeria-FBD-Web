@@ -19,6 +19,11 @@ public class DBConexion {
     static String password = "mensajeria#2020";
     static String url = "jdbc:postgresql://mensajeriafbd.csvkszv7bls2.us-east-1.rds.amazonaws.com:5432/mensajeria_fbd_aws";
     static String mensaje = "";
+    /*static String bd = "mensajeria_fbd_aws";
+    static String login = "postgres";
+    static String password = "admin123";
+    static String url = "jdbc:postgresql://localhost:5432/mensajeria_fbd_aws";
+    static String mensaje = "";*/
     
     public Connection conexion = null;
     /**

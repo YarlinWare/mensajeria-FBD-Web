@@ -50,7 +50,7 @@
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html">La Caffettiera</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -63,16 +63,14 @@
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.jsp">Solicitar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.jsp">Consultar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
-            <!--<li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
-            </li>-->
+            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="admin.jsp">Mensajeros</a>
+              <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
         </div>
@@ -188,11 +186,11 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="#" class="link">Política de privacidad</a> ·
+        	<a href="#" class="link">Aviso legal</a> ·
+        	<a href="#" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Las Delicias 2020</p>
+        <p class="m-0 mbt1">&copy; Mensajería FBD</p>
       </div>
 	</footer>
 
