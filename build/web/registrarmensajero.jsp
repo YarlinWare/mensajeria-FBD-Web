@@ -63,11 +63,9 @@
               <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.jsp">Consultar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
-            <!--<li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
-            </li>-->
+            
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
@@ -89,64 +87,64 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="numero_usuario">#Usuario</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getK_num_documento()%>"
+                    <input type="text"
                            class="form-control" id="txtId" name="txtId" placeholder="Nuemro de identificaci�n">
                 </div>
                 <div class="form-group">
                     <label for="numero_perfil">#Perfil</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getK_tipo_documento()%>" 
+                    <input type="text"
                            class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Tipo identificacion">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_primer_nombre()%>" 
+                    <input type="text"  
                            class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Primer nombre" z>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_segundo_nombre()%>" 
+                    <input type="text" 
                            class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Segundo nombre" z>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_primer_apellido()%>" 
+                    <input type="text" 
                            class="form-control" id="n_primer_apellido" name="n_primer_apellido" placeholder="Primer apellido" z>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_segundo_apellido()%>" 
+                    <input type="text" 
                            class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Segundo apellido" z>
                 </div>
                 <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="apellido">#Usuario</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getQ_tefefono()%>"
+                    <input type="text" 
                            class="form-control" id="q_tefefono" name="q_tefefono" placeholder="Numero de Telefono">
                 </div>
                 <div class="form-group ">
                     <label for="apellido">G�nero</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getO_genero()%>" class="form-control" id="o_genero" name="o_genero" placeholder="G�nero">
+                    <input type="text" class="form-control" id="o_genero" name="o_genero" placeholder="G�nero">
                 </div>
                 <div class="form-group ">
                     <label for="apellido">G�nero</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getF_nacimiento()%>" 
+                    <input type="text"
                            class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="Fecha nacimiento">
                 </div>
                 <div class="form-group ">
                     <label for="apellido">G�nero</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getD_dir()%>" 
+                    <input type="text"
                            class="form-control" id="n_correo" name="d_dir" placeholder="direccion">
                 </div>
                            
                 <div class="form-group ">
                     <label for="apellido">G�nero</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getQ_num_seguridad_social()%>" 
+                    <input type="text"
                            class="form-control" id="f_nacimiento" name="q_num_seguridad_social" placeholder="seguridad social">
                 </div>
 
                 <div class="form-group ">
                     <label for="apellido">G�nero</label>
-                    <input type="text" value="<%= ((Mensajero)session.getAttribute("mensajero")).getO_medio_transporte()%>" 
+                    <input type="text"
                            class="form-control" id="f_nacimiento" name="o_medio_transporte" placeholder="medio de transporte">
                 </div>
             </div>
@@ -183,11 +181,11 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Pol�tica de privacidad</a> �
-        	<a href="sample.html" class="link">Aviso legal</a> �
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="#" class="link">Pol�tica de privacidad</a> �
+        	<a href="#" class="link">Aviso legal</a> �
+        	<a href="#" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Las Delicias 2020</p>
+        <p class="m-0 mbt1">&copy; Mensajería FBD</p>
       </div>
 	</footer>
 

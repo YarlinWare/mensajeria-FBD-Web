@@ -123,17 +123,7 @@
                  
             </tr>
             <tr>
-                <!--<thead class="thead-dark">                     
-                    <th scope="col">#Documento</th>
-                    <th scope="col">Tipo Doc</th>
-                    <th scope="col">Primer nombre</th>
-                    <th scope="col">Segundo nombre</th>
-                    <th scope="col">Primer apellido</th>
-                    <th scope="col">Segundo apellido</th>
-                    <th scope="col">Genero</th>
-                    <th scope="col">Fecha nacimiento</th>
-                    <th scope="col">Correo</th>
-                </thead>-->
+                
             </tr>
         </table>
         <td colspan="5" class="links"><a class="btn btn-success" href="registrarcliente.jsp">Agregar</a></td>

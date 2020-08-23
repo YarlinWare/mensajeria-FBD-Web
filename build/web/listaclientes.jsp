@@ -68,16 +68,14 @@
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.jsp">Solicitar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.jsp">Consultar Servicio</a>
+              <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
-            <!--<li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
-            </li>-->
+            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="admin.jsp">Mensajeros</a>
+              <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
         </div>
@@ -125,17 +123,7 @@
                  
             </tr>
             <tr>
-                <!--<thead class="thead-dark">                     
-                    <th scope="col">#Documento</th>
-                    <th scope="col">Tipo Doc</th>
-                    <th scope="col">Primer nombre</th>
-                    <th scope="col">Segundo nombre</th>
-                    <th scope="col">Primer apellido</th>
-                    <th scope="col">Segundo apellido</th>
-                    <th scope="col">Genero</th>
-                    <th scope="col">Fecha nacimiento</th>
-                    <th scope="col">Correo</th>
-                </thead>-->
+                
             </tr>
         </table>
         <td colspan="5" class="links"><a class="btn btn-success" href="registrarcliente.jsp">Agregar</a></td>
@@ -164,11 +152,11 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="#" class="link">Política de privacidad</a> ·
+        	<a href="#" class="link">Aviso legal</a> ·
+        	<a href="#" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Las Delicias 2020</p>
+        <p class="m-0 mbt1">&copy; Mensajería FBD</p>
       </div>
 	</footer>
 
