@@ -59,7 +59,7 @@
             <li class="nav-item  px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="index.jsp">Inicio</a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
@@ -69,7 +69,7 @@
               <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
             
-            <li class="nav-item px-lg-4">
+            <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>

@@ -5,8 +5,8 @@
 --%>
 
 <%@page import="java.sql.ResultSet"%>
-<%@page import="database.DBServicio"%>
-<%@page import="logica.Servicio"%>
+<%@page import="database.DBCliente"%>
+<%@page import="logica.Cliente"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -103,64 +103,22 @@
         <%if (!request.getParameterMap().isEmpty()) {
           
           try{
-                Servicio servicio = new Servicio();
-                DBServicio servicioDB = new DBServicio();
-                //Convertir el codigo postal a un valor num�rico
+                Cliente c = new Cliente();
+                DBCliente clienteDB = new DBCliente();
+                            
+                c.setK_num_documento(234435);
+                c.setK_tipo_documento("CE");
+                c.setN_primer_nombre("nombre 1");
+                c.setN_segundo_nombre("nombre 2");
+                c.setN_primer_apellido("apellido 1");
+                c.setN_segundo_apellido("apellido 2");
+                c.setO_genero("genero");
+                //c.setF_nacimiento("2012-12-20");
+                c.setN_correo("nombre@gmail.com");
                 
-                
-                //Long codPostal = Long.valueOf(request.getParameter("codPostal"));
-                /*int k_id_servicio = (Integer.parseInt(request.getParameter("k_id_servicio")));
-                int k_id_tipo_paquete = (Integer.parseInt(request.getParameter("k_id_tipo_paquete")));
-                int k_num_documento_usuario = (Integer.parseInt(request.getParameter("k_num_documento_usuario")));
-                String k_tipo_documento_usuario = (request.getParameter("k_tipo_documento_usuario"));
-
-                String f_fecha = (request.getParameter("f_fecha"));
-                String f_hora =  (request.getParameter("f_fecha"));*/
-                
-                
-                int idservicio = Integer.parseInt(request.getParameter("id_servicio"));
-                int idtipo_paquete = Integer.parseInt(request.getParameter("id_tipo_paquete"));
-                /*int k_num_documento_usuario = 12345678;
-                String k_tipo_documento_usuario = "CE";
-                int k_num_documento_mensajero = 12345678;
-                String k_tipo_documento_mensajero = "CE";
-
-                String f_fecha = "2020/08/10";
-                String f_hora =  "08:00:00";*/
-                
-                
-                /*servicio.setK_id_servicio(Integer.parseInt(k_id_servicio));
-                servicio.setK_id_tipo_paquete(Integer.parseInt(k_id_tipo_paquete));*/
-                /*servicio.setK_num_documento_usuario(k_num_documento_usuario);
-                servicio.setK_tipo_documento_usuario(k_tipo_documento_usuario);
-                servicio.setK_num_documento_mensajero(k_num_documento_mensajero);
-                servicio.setK_tipo_documento_mensajero(k_tipo_documento_mensajero);
-                servicio.setF_fecha(f_fecha);
-                servicio.setF_hora(f_hora);*/
-  
-                //servicioDB.getServicioById(idservicio, idtipo_paquete);                
-                ResultSet res = servicioDB.getServicioById(2, 4);
-                 if(res.next()){
-                     
-                        servicio.setK_id_servicio(res.getInt("k_id_servicio"));                     
-                        servicio.setK_id_tipo_paquete(res.getInt("k_id_tipo_paquete"));
-                        servicio.setK_num_documento_usuario(res.getInt("k_num_documento_usuario"));
-                        servicio.setK_tipo_documento_usuario(res.getString("k_tipo_documento_usuario"));
-                        servicio.setK_num_documento_mensajero(res.getInt("k_num_documento_mensajero"));
-                        servicio.setK_tipo_documento_mensajero(res.getString("k_tipo_documento_mensajero"));
-                        servicio.setF_fecha(res.getString("f_fecha"));
-                        servicio.setF_hora(res.getString("f_hora"));
-                }            
-                
-                
-                
-                request.getSession().setAttribute("servicio", servicio);              
-                response.sendRedirect("resultadobusqueda.jsp");//out.println("ID servicio ["+ servicio.getK_id_servicio()+ "] Incluido exitosamente");
-                out.println("Tipo de servicio ["+ servicio.getK_tipo_documento_usuario()+ "] Incluido exitosamente");
-                out.println("ID usuario ["+ servicio.getK_num_documento_usuario()+ "] Incluido exitosamente");
-                out.println("Tipo de documento ["+ servicio.getK_tipo_documento_usuario()+ "] Incluido exitosamente");
-                out.println("Fecha ["+ servicio.getF_fecha()+ "] Incluido exitosamente");
-                out.println("Hora ["+ servicio.getF_hora()+ "] Incluido exitosamente");   
+                clienteDB.insertarCliente(c);
+            
+                response.sendRedirect("listaclientes.jsp");
             }
             catch(NumberFormatException e ){
                 out.println("Tipo de servicio ["+ request.getParameter("k_id_servicio")+ "] <br>");

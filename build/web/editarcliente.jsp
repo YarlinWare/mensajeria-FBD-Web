@@ -85,21 +85,54 @@
     
     <div class="container">
         <div class="pt-5 pb-5 formularioRegistro ">
-           < <div class="card-header text-center">
+            <div class="card-header text-center">
                 <h2 class="titulo">Información de registro</h2>
             </div>
-        <form id="nuevoRegistro" action="ActualizarCliente" method="POST" enctype="multipart/form-data" target="_blank" class="pt-3 pb-5" >
-            <div class="row ">
-                <!-- Datos basicos-->			
-                <div class="col-sm-12 col-md-6">
-                    
-                </div>
-                <!-- ./Datos basicos-->
-            </div>
-            <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
+            <form id="frmActualizarBlog" action="ActualizarCliente" method="POST">
+             
+        <table  class="table table-striped table-dark">
+            <tr>
+                <td>Número de documento</td>
+                <td><input type="text" id="k_num_documento"  name="k_num_documento" value="<%= ((Cliente)session.getAttribute("cliente")).getK_num_documento()%>"></td>
+            </tr>
+            <tr>
+                <td>Tipo de documento</td>
+                <td><input type="text" id="k_tipo_documento"  name="k_tipo_documento" value="<%= ((Cliente)session.getAttribute("cliente")).getK_tipo_documento()%>"></td>
+            </tr>
+            <tr>
+                <td>Primer nombre</td>
+                <td><input type="text" id="n_primer_nombre" name="n_primer_nombre" value="<%= ((Cliente)session.getAttribute("cliente")).getN_primer_nombre()%>"></td>
+            </tr>
+            <tr>
+                <td>Segundo nombre</td>
+                <td><input type="text" id="n_segundo_nombre" name="n_segundo_nombre" value="<%= ((Cliente)session.getAttribute("cliente")).getN_segundo_nombre()%>"></td>
+            </tr>
+            <tr>
+                <td>Primer apellido</td>
+                <td><input type="text" id="n_primer_apellido" name="n_primer_apellido" value="<%= ((Cliente)session.getAttribute("cliente")).getN_primer_apellido()%>"></td>
+            </tr>
+            <tr>
+                <td>Segundo apellido</td>
+                <td><input type="text" id="n_segundo_apellido" name="n_segundo_apellido" value="<%= ((Cliente)session.getAttribute("cliente")).getN_segundo_apellido()%>"></td>
+            </tr>
+            <tr>
+                <td>Correo</td>
+                <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Cliente)session.getAttribute("cliente")).getN_correo()%>"></td>
+            </tr>
+            <tr>
+                <td>Fecha de nacimiento</td>
+                <td><input type="text" id="f_nacimiento" name="f_nacimiento" value="<%= ((Cliente)session.getAttribute("cliente")).getF_nacimiento()%>"></td>
+            </tr>
+            <tr>
+                <td>Género</td>
+                <td><input type="text" id="n_correo" name="n_correo" value="<%= ((Cliente)session.getAttribute("cliente")).getO_genero()%>"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" class="btn btn-success" value="Aceptar" onclick="submit();"></td>
+            </tr>            
+        </table>
         </form>
         </div>
-        <td colspan="5" class="links"><a href="registrarcliente.jsp">Agregar</a></td>
 
     </div>
     <!-- Pié de página -->

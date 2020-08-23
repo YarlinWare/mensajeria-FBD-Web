@@ -10,7 +10,7 @@ package logica;
  * @author kjan
  */
 public class Cliente {
-    int k_num_documento;
+    long k_num_documento;
     String k_tipo_documento;
     String n_primer_nombre;
     String n_segundo_nombre;
@@ -20,7 +20,7 @@ public class Cliente {
     String f_nacimiento;
     String n_correo;
 
-    public Cliente(int k_num_documento, String k_tipo_documento, String n_primer_nombre, String n_segundo_nombre, String n_primer_apellido, String n_segundo_apellido, String o_genero, String f_nacimiento, String n_correo) {
+    public Cliente(long k_num_documento, String k_tipo_documento, String n_primer_nombre, String n_segundo_nombre, String n_primer_apellido, String n_segundo_apellido, String o_genero, String f_nacimiento, String n_correo) {
         this.k_num_documento = k_num_documento;
         this.k_tipo_documento = k_tipo_documento;
         this.n_primer_nombre = n_primer_nombre;
@@ -33,16 +33,16 @@ public class Cliente {
     }
 
     public Cliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //To change body of generated methods, choose Tools | Templates.
     }
     
     
 
-    public int getK_num_documento() {
+    public long getK_num_documento() {
         return k_num_documento;
     }
 
-    public void setK_num_documento(int k_num_documento) {
+    public void setK_num_documento(long k_num_documento) {
         this.k_num_documento = k_num_documento;
     }
 
@@ -108,6 +108,10 @@ public class Cliente {
 
     public void setN_correo(String n_correo) {
         this.n_correo = n_correo;
+    }
+
+    public int get(int DATE) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

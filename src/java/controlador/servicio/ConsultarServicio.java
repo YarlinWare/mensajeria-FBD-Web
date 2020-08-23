@@ -37,7 +37,7 @@ public class ConsultarServicio extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        Servicio s = new Servicio();
+        Servicio servicio = new Servicio();
         DBServicio servicioDB = new DBServicio();
         PrintWriter out = response.getWriter();
         
@@ -46,23 +46,17 @@ public class ConsultarServicio extends HttpServlet {
         ResultSet res = servicioDB.getServicioById(id_servicio, id_tipo_paquete);
             
         try {
-            if (res.next()){
-                s.setK_id_servicio(Integer.parseInt(request.getParameter("k_id_servicio")));
-                s.setK_id_tipo_paquete(Integer.parseInt(request.getParameter("k_id_tipo_paquete")));
-                int doc_usuario = (Integer.parseInt(request.getParameter("k_num_documento_usuario")));
-                s.setK_num_documento_usuario(doc_usuario);
-                s.setK_tipo_documento_usuario(request.getParameter("k_tipo_documento_usuario"));
-                if (request.getParameter("k_num_documento_mensajero") != "") {                    
-                    int doc_mensajero = Integer.parseInt(request.getParameter("k_num_documento_mensajero"));
-                    s.setK_num_documento_mensajero(doc_mensajero);
-                    s.setK_tipo_documento_mensajero(request.getParameter("k_tipo_documento_mensajero"));
-                }
-                s.setF_fecha(request.getParameter("f_fecha"));
-                s.setF_hora(request.getParameter("f_hora"));
-                s.setV_valor_servicio(Integer.parseInt(request.getParameter("k_tipo_documento_mensajero")));
-                
-            }            
-            request.getSession().setAttribute("servicio", s);          
+            if(res.next()){
+                    servicio.setK_id_servicio(res.getInt("k_id_servicio"));                     
+                    servicio.setK_id_tipo_paquete(res.getInt("k_id_tipo_paquete"));
+                    servicio.setK_num_documento_usuario(res.getInt("k_num_documento_usuario"));
+                    servicio.setK_tipo_documento_usuario(res.getString("k_tipo_documento_usuario"));
+                    servicio.setK_num_documento_mensajero(res.getInt("k_num_documento_mensajero"));
+                    servicio.setK_tipo_documento_mensajero(res.getString("k_tipo_documento_mensajero"));
+                    servicio.setF_fecha(res.getString("f_fecha"));
+                    servicio.setF_hora(res.getString("f_hora"));
+            }        
+            request.getSession().setAttribute("servicio", servicio);              
             response.sendRedirect("resultadobusqueda.jsp");
         }finally {            
             out.close();

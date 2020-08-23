@@ -1,10 +1,4 @@
 <%-- 
-    Document   : editarcliente
-    Created on : 22/08/2020, 03:25:44 PM
-    Author     : ASUS
---%>
-
-<%-- 
     Document   : index.jsp
     Created on : 15-mar-2020, 16.14.30
     Author     : ASUS
@@ -82,33 +76,33 @@
     </nav>
     
     <div class="container">
-        <form id="nuevoRegistro" action="InsertarCliente" method="POST" enctype="multipart/form-data" target="_blank" class="pt-3 pb-5" >
+        <form id="nuevoRegistro" method="GET" enctype="multipart/form-data" class="pt-3 pb-5" >
             <div class="row ">
                 <!-- Datos basicos-->			
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="name1">Número de documento</label>
-                        <input type="text" class="form-control" id="k_num_documento" name="k_num_documento" placeholder="Numero usuario">
+                        <input type="number" class="form-control" id="num_documento" name="num_documento" placeholder="Numero usuario">
                     </div>
                     <div class="form-group">
                         <label for="name1">Tipo de documento</label>
-                        <input type="text" class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Numero Perfil">
+                        <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" placeholder="Numero Perfil">
                     </div>
                     <div class="form-group">
                         <label for="email1">Primer nombre</label>
-                        <input type="text" class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" placeholder="Nombre">
                     </div>
                     <div class="form-group">
                         <label for="email1">Segundo nombre</label>
-                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="Nombre">
                     </div>
                     <div class="form-group ">
                         <label for="pass1">Primer apellido</label>
-                        <input type="text" class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Apellido">
                     </div>
                     <div class="form-group ">
                         <label for="pass1">Segundo apellido</label>
-                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Apellido">
+                        <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="Apellido">
                     </div>
                     
                 </div>

@@ -47,14 +47,14 @@ public class CargarClientes extends HttpServlet {
             ResultSet res = clienteDB.getClienteById(num_doc, tipo_doc);
             if (res.next()){
                 c.setK_num_documento(res.getInt("k_num_documento"));
-                c.setK_tipo_documento("k_tipo_documento");
-                c.setN_primer_nombre("n_primer_nombre");
-                c.setN_segundo_nombre("n_segundo_nombre");
-                c.setN_primer_apellido("n_primer_apellido");
-                c.setN_segundo_apellido("n_segundo_apellido");
-                c.setO_genero("o_genero");
-                c.setF_nacimiento("f_nacimiento");
-                c.setN_correo("n_correo");    
+                c.setK_tipo_documento(res.getString("k_tipo_documento"));
+                c.setN_primer_nombre(res.getString("n_primer_nombre"));
+                c.setN_segundo_nombre(res.getString("n_segundo_nombre"));
+                c.setN_primer_apellido(res.getString("n_primer_apellido"));
+                c.setN_segundo_apellido(res.getString("n_segundo_apellido"));
+                c.setO_genero(res.getString("o_genero"));
+                c.setF_nacimiento(res.getString("f_nacimiento"));
+                c.setN_correo(res.getString("n_correo"));    
                 
             }
             if(opc.equals("edit")){

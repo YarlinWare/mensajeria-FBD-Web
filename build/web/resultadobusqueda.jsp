@@ -62,13 +62,13 @@
             <li class="nav-item  px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="index.jsp">Inicio</a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="solicitarservicio.jsp">Solicitar Servicio</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
             
@@ -85,24 +85,24 @@
         <table  class="table table-striped table-dark mt-5">
             
             <tr>
-                <td>Fecha</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getF_fecha()%></td>
+                <td>Fecha y hora de solicitud</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getF_fecha()%> a las <%= ((Servicio)session.getAttribute("servicio")).getF_hora()%></td>
             </tr> 
             <tr>
                 <td>Num usuario</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getF_hora()%></td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_tipo_documento_usuario()%>: <%= ((Servicio)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
             </tr> 
             <tr>
-                <td>Num usuario</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
+                <td>Tipo de paquete</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%></td>
             </tr>
             <tr>
                 <td>ID Servicio</td>
                 <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%></td>
             </tr>
             <tr>
-                <td>Tipo paquete</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%></td>
+                <td>Valor del servicio</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getV_valor_servicio()%></td>
             </tr>         
         </table>
     </div>
