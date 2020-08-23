@@ -77,7 +77,8 @@
               <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
             </li>-->
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="admin.jsp">Mensajeros</a>
+
+              <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
         </div>

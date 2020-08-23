@@ -89,68 +89,55 @@
     </nav>
     
     <div class="container">
-        <form id="frmInsertarProducto" action="InsertarCliente" method="POST">
-        <table class="table table-striped table-dark">
-            
-             <tr>
-                <thead class="thead-dark">
-                <th scope="col" style="text-align: center">INGRESE EL NUEVO CLIENTE</th>                    
-                </thead>
-            </tr>
+        <form id="nuevoRegistro" action="InsertarCliente" method="POST" enctype="multipart/form-data" target="_blank" class="pt-3 pb-5" >
+            <div class="row ">
+                <!-- Datos basicos-->			
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="name1">Número de documento</label>
+                        <input type="text" class="form-control" id="k_num_documento" name="k_num_documento" placeholder="Numero usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="name1">Tipo de documento</label>
+                        <input type="text" class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Numero Perfil">
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Primer nombre</label>
+                        <input type="text" class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Segundo nombre</label>
+                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group ">
+                        <label for="pass1">Primer apellido</label>
+                        <input type="text" class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Apellido">
+                    </div>
+                    <div class="form-group ">
+                        <label for="pass1">Segundo apellido</label>
+                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Apellido">
+                    </div>
+                    
+                </div>
+                <!-- ./Datos basicos-->
 
-            <div class="col-sm-12 col-md-6">
-                <div class="form-group">
-                    <label for="numero_usuario">#Usuario</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("k_num_documento")).getK_num_documento()%>"
-                           class="form-control" id="txtId" name="txtId" placeholder="Nuemro de identificación">
-                </div>
-                <div class="form-group">
-                    <label for="numero_perfil">#Perfil</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("k_tipo_documento")).getK_tipo_documento()%>" 
-                           class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Tipo identificacion">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("n_primer_nombre")).getN_primer_nombre()%>" 
-                           class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Primer nombre" z>
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("n_segundo_nombre")).getN_segundo_nombre()%>" 
-                           class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Segundo nombre" z>
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("n_primer_apellido")).getN_primer_apellido()%>" 
-                           class="form-control" id="n_primer_apellido" name="n_primer_apellido" placeholder="Primer apellido" z>
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("n_segundo_apellido")).getN_segundo_apellido()%>" 
-                           class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Segundo apellido" z>
-                </div>
-                <div class="form-group ">
-                    <label for="apellido">Género</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("o_genero")).getO_genero()%>" class="form-control" id="o_genero" name="o_genero" placeholder="Género">
-                </div>
-                <div class="form-group ">
-                    <label for="apellido">Género</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("f_nacimiento")).getF_nacimiento()%>" 
-                           class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="Fecha nacimiento">
-                </div>
-                <div class="form-group ">
-                    <label for="apellido">Género</label>
-                    <input type="text" value="<%= ((Cliente)session.getAttribute("n_correo")).getN_correo()%>" 
-                           class="form-control" id="n_correo" name="n_correo" placeholder="Correo">
-                </div>
-
+                <!-- Información médica-->
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group ">
+                        <label for="pass2">Correo</label>
+                        <input type="email" class="form-control"  id="n_correo" name="n_correo" placeholder="ejemplo@restaurante.com">
+                    </div>
+                    <div class="form-group ">
+                        <label for="celphone">Fecha de nacimiento</label>
+                        <input type="text" class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="99/12/12">
+                    </div>
+                    <div class="form-group ">
+                        <label for="edad">Genero</label>
+                        <input type="text" class="form-control" id="o_genero" name="o_genero" placeholder="Género">
+                    </div>				
+                </div> 
             </div>
-            
-            <tr>
-                <td colspan="2"><input type="button" value="Aceptar" onclick="submit();"></td>
-            </tr>
-            
-        </table>
+            <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
         </form>
 
     </div>

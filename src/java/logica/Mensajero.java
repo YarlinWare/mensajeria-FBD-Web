@@ -14,6 +14,14 @@ public class Mensajero {
     String k_tipo_documento;
     String n_primer_nombre;
     String n_segundo_nombre;
+    String n_primer_apellido;
+    String n_segundo_apellido;
+    String q_tefefono;
+    String o_genero;
+    String f_nacimiento;
+    String d_dir;
+    int q_num_seguridad_social;
+    String o_medio_transporte;
 
     public Mensajero(int k_num_documento, String k_tipo_documento, String n_primer_nombre, String n_segundo_nombre, String n_primer_apellido, String n_segundo_apellido, String q_tefefono, String o_genero, String f_nacimiento, String d_dir, int q_num_seguridad_social, String o_medio_transporte) {
         this.k_num_documento = k_num_documento;
@@ -28,6 +36,10 @@ public class Mensajero {
         this.d_dir = d_dir;
         this.q_num_seguridad_social = q_num_seguridad_social;
         this.o_medio_transporte = o_medio_transporte;
+    }
+
+    public Mensajero() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
@@ -127,13 +139,6 @@ public class Mensajero {
     public void setO_medio_transporte(String o_medio_transporte) {
         this.o_medio_transporte = o_medio_transporte;
     }
-    String n_primer_apellido;
-    String n_segundo_apellido;
-    String q_tefefono;
-    String o_genero;
-    String f_nacimiento;
-    String d_dir;
-    int q_num_seguridad_social;
-    String o_medio_transporte;
+  
     
 }
