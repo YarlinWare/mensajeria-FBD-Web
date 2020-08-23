@@ -8,7 +8,6 @@ package controlador.servicio;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -40,6 +39,7 @@ public class ConsultarServicio extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Servicio s = new Servicio();
         DBServicio servicioDB = new DBServicio();
+        PrintWriter out = response.getWriter();
         
         int id_servicio = Integer.parseInt(request.getParameter("id_servicio"));
         int id_tipo_paquete = Integer.parseInt(request.getParameter("id_tipo_paquete"));
@@ -62,8 +62,7 @@ public class ConsultarServicio extends HttpServlet {
                 s.setV_valor_servicio(Integer.parseInt(request.getParameter("k_tipo_documento_mensajero")));
                 
             }            
-            request.getSession().setAttribute("servicio", s);        
-           
+            request.getSession().setAttribute("servicio", s);          
             response.sendRedirect("resultadobusqueda.jsp");
         }finally {            
             out.close();

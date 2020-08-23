@@ -24,17 +24,20 @@ public class DBServicio {
     }
     public ResultSet getServicioById(int k_id_servicio,int k_id_tipo_paquete) throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement(" "
-                + " SELECT "
-                + " k_id_tipo_paquete,"
+                + " SELECT k_id_servicio,"
+                + " k_id_tipo_paquete, "
+                + " k_num_documento_usuario, "
+                + " k_tipo_documento_usuario, "
+                + " k_num_documento_mensajero, "
+                + " k_tipo_documento_mensajero, "
                 + " f_fecha,"
                 + " f_hora,"
                 + " v_valor_servicio"
                 + " FROM servicio "
-                + " WHERE  k_id_servicio = ?");
-                //+ "WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ?");
+                + " WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ?");
        
         pstm.setInt(1,k_id_servicio);
-        //pstm.setInt(2,k_id_tipo_paquete);  
+        pstm.setInt(2,k_id_tipo_paquete);  
         ResultSet res = pstm.executeQuery();
         /*
          res.close();	
@@ -66,15 +69,15 @@ public class DBServicio {
                     + "f_hora,"
                     +"v_valor_servicio"
                     + " values(?,?,?,?,?,?,?,?,?)");
-            pstm.setInt(1, s.getK_id_servicio());
-            pstm.setInt(2, s.getK_id_tipo_paquete());
-            pstm.setInt(3, s.getK_num_documento_usuario());
+            pstm.setLong(1, s.getK_id_servicio());
+            pstm.setLong(2, s.getK_id_tipo_paquete());
+            pstm.setLong(3, s.getK_num_documento_usuario());
             pstm.setString(4, s.getK_tipo_documento_usuario());
-            pstm.setInt(5, s.getK_num_documento_mensajero());
+            pstm.setLong(5, s.getK_num_documento_mensajero());
             pstm.setString(6, s.getK_tipo_documento_mensajero());
             pstm.setString(7, s.getF_fecha());
             pstm.setString(8, s.getF_hora());
-            pstm.setInt(9, s.getV_valor_servicio());
+            pstm.setLong(9, s.getV_valor_servicio());
             
 
             pstm.executeUpdate();
@@ -97,13 +100,13 @@ public class DBServicio {
                     + " f_hora= ? "
                     + " v_valor_servicio= ? "
                     + " WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ? ");
-            pstm.setInt(1, s.getK_num_documento_mensajero());
+            pstm.setLong(1, s.getK_num_documento_mensajero());
             pstm.setString(2, s.getK_tipo_documento_mensajero());
             pstm.setString(3, s.getF_fecha());
             pstm.setString(4, s.getF_hora());
-            pstm.setInt(5, s.getV_valor_servicio());
-            pstm.setInt(6, s.getK_id_servicio());
-            pstm.setInt(7, s.getK_id_tipo_paquete());
+            pstm.setLong(5, s.getV_valor_servicio());
+            pstm.setLong(6, s.getK_id_servicio());
+            pstm.setLong(7, s.getK_id_tipo_paquete());
             
             pstm.executeUpdate();
 
@@ -118,8 +121,8 @@ public class DBServicio {
             PreparedStatement pstm = cn.getConexion().prepareStatement("DELETE FROM cliente "
                     + "WHERE  k_id_servicio = ? AND k_id_tipo_paquete = ?");
 
-             pstm.setInt(1, s.getK_id_servicio());
-            pstm.setInt(2, s.getK_id_tipo_paquete());
+             pstm.setLong(1, s.getK_id_servicio());
+             pstm.setLong(2, s.getK_id_tipo_paquete());
 
             pstm.executeUpdate();
 

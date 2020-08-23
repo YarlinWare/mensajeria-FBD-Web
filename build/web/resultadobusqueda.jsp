@@ -82,19 +82,27 @@
 
     <div class="container">
              
-        <table  class="table table-striped table-dark">
+        <table  class="table table-striped table-dark mt-5">
             
             <tr>
                 <td>Fecha</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_tipo_documento_usuario()%></td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getF_fecha()%></td>
             </tr> 
             <tr>
+                <td>Num usuario</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getF_hora()%></td>
+            </tr> 
+            <tr>
+                <td>Num usuario</td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
+            </tr>
+            <tr>
                 <td>ID Servicio</td>
-                <td><input type="number" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%>"></td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%></td>
             </tr>
             <tr>
                 <td>Tipo paquete</td>
-                <td><input type="number" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%>"></td>
+                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%></td>
             </tr>         
         </table>
     </div>

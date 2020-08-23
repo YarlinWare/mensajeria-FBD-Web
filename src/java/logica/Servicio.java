@@ -10,17 +10,17 @@ package logica;
  * @author kjan
  */
 public class Servicio {
-    int k_id_servicio;
-    int k_id_tipo_paquete;
-    int k_num_documento_usuario;
+    long k_id_servicio;
+    long k_id_tipo_paquete;
+    long k_num_documento_usuario;
     String k_tipo_documento_usuario;
-    int k_num_documento_mensajero;
+    long k_num_documento_mensajero;
     String k_tipo_documento_mensajero;
     String f_fecha;
     String f_hora;
-    int v_valor_servicio;
+    long v_valor_servicio;
 
-    public Servicio(int k_id_servicio, int k_id_tipo_paquete, int k_num_documento_usuario, String k_tipo_documento_usuario, int k_num_documento_mensajero, String k_tipo_documento_mensajero, String f_fecha, String f_hora, int v_valor_servicio) {
+    public Servicio(long k_id_servicio, long k_id_tipo_paquete, long k_num_documento_usuario, String k_tipo_documento_usuario, long k_num_documento_mensajero, String k_tipo_documento_mensajero, String f_fecha, String f_hora, long v_valor_servicio) {
         this.k_id_servicio = k_id_servicio;
         this.k_id_tipo_paquete = k_id_tipo_paquete;
         this.k_num_documento_usuario = k_num_documento_usuario;
@@ -37,7 +37,7 @@ public class Servicio {
     }
     
 
-    public int getK_id_servicio() {
+    public long getK_id_servicio() {
         return k_id_servicio;
     }
 
@@ -45,7 +45,7 @@ public class Servicio {
         this.k_id_servicio = k_id_servicio;
     }
 
-    public int getK_id_tipo_paquete() {
+    public long getK_id_tipo_paquete() {
         return k_id_tipo_paquete;
     }
 
@@ -53,7 +53,7 @@ public class Servicio {
         this.k_id_tipo_paquete = k_id_tipo_paquete;
     }
 
-    public int getK_num_documento_usuario() {
+    public long getK_num_documento_usuario() {
         return k_num_documento_usuario;
     }
 
@@ -69,7 +69,7 @@ public class Servicio {
         this.k_tipo_documento_usuario = k_tipo_documento_usuario;
     }
 
-    public int getK_num_documento_mensajero() {
+    public long getK_num_documento_mensajero() {
         return k_num_documento_mensajero;
     }
 
@@ -101,7 +101,7 @@ public class Servicio {
         this.f_hora = f_hora;
     }
 
-    public int getV_valor_servicio() {
+    public long getV_valor_servicio() {
         return v_valor_servicio;
     }
 
