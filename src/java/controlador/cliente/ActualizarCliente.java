@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlado.cliente;
+package controlador.cliente;
 
 import database.DBCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logica.Cliente;
+import static java.lang.System.out;
 
 /**
  *
  * @author ASUS
  */
-@WebServlet(name = "CargarCliente", urlPatterns = {"/CargarCliente"})
-public class CargarClientes extends HttpServlet {
+@WebServlet(name = "ActualizarCliente", urlPatterns = {"/ActualizarCliente"})
+public class ActualizarCliente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,33 +34,23 @@ public class CargarClientes extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");         
         Cliente c = new Cliente();
         DBCliente clienteDB = new DBCliente();
-        try  {
-            int num_doc = Integer.parseInt(request.getParameter("num_doc"));
-            String tipo_doc = request.getParameter("tipo_doc");
-            String opc = request.getParameter("opc");
-            out.write(opc);
-            ResultSet res = clienteDB.getClienteById(num_doc, tipo_doc);
-            if (res.next()){
-                c.setK_num_documento(res.getInt("k_num_documento"));
-                c.setK_tipo_documento("k_tipo_documento");
-                c.getN_primer_nombre();
-                
-            }
-            if(opc.equals("edit")){
-                request.getSession().setAttribute("cliente", c);
-                response.sendRedirect("actualizarcliente.jsp");
-            }
-            if(opc.equals("delete")){
-                clienteDB.borrarCliente(c);
-                response.sendRedirect("listaclientes");
-            }
-            
-        }catch(Exception e){
-            
+        try {
+            c.setK_num_documento(Integer.parseInt(request.getParameter("k_num_documento")));
+            c.setK_tipo_documento(request.getParameter("k_tipo_documento"));
+            c.setN_primer_nombre(request.getParameter("n_primer_nombre"));
+            c.setN_segundo_nombre(request.getParameter("n_segundo_nombre"));
+            c.setN_primer_apellido(request.getParameter("n_primer_apellido"));
+            c.setN_segundo_apellido(request.getParameter("n_segundo_apellido"));
+            c.setO_genero(request.getParameter("o_genero"));
+            c.setF_nacimiento(request.getParameter("f_nacimiento"));
+            c.setN_correo(request.getParameter("n_correo"));
+           
+           clienteDB.actualizarCliente(c);
+           
+           response.sendRedirect("listaclientes.jsp");
         }finally {            
             out.close();
         }

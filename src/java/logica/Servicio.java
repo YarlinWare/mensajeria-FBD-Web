@@ -31,6 +31,10 @@ public class Servicio {
         this.f_hora = f_hora;
         this.v_valor_servicio = v_valor_servicio;
     }
+
+    public Servicio() {
+         //To change body of generated methods, choose Tools | Templates.
+    }
     
 
     public int getK_id_servicio() {

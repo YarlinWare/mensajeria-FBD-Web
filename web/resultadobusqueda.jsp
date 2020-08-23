@@ -1,20 +1,12 @@
 <%-- 
-    Document   : editarcliente
-    Created on : 22/08/2020, 03:25:44 PM
+    Document   : consultarservicio
+    Created on : 22/08/2020, 08:46:19 PM
     Author     : ASUS
 --%>
 
-<%-- 
-    Document   : index.jsp
-    Created on : 15-mar-2020, 16.14.30
-    Author     : ASUS
---%>
-<%@page import="java.util.List"%>
-
-<%@page import="java.sql.ResultSet"%>
-<%@page import="database.DBCliente"%>
-<%@page import="logica.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="logica.Servicio"%>
+<%@page import="database.DBServicio"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -25,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inicio | Registrar cliente</title>
+    <title>Inicio | Mensajeria</title>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +35,9 @@
   <body>
       <!-- Menu acceso -->
       <nav class="navbar navbar-expand-lg navbar-dark row justify-content-between">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
+        <a href="index.jsp" class="navbar-brand pl-3 ">
+          <!--<img src="img/logo.png" width="auto" height="40" alt="">-->
+        </a>
         <div class="d-flex aling-item-end pr-3 btn-ingreso-registro">
           <!--<a href="login.jsp" class="btn btn-ingreso nav-link text-uppercase text-expanded">Ingresar</a>-->
           <a href="registrarcliente.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
@@ -59,7 +53,7 @@
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,59 +81,18 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="container">
-        <form id="nuevoRegistro" action="InsertarCliente" method="POST" enctype="multipart/form-data" target="_blank" class="pt-3 pb-5" >
-            <div class="row ">
-                <!-- Datos basicos-->			
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="name1">Número de documento</label>
-                        <input type="text" class="form-control" id="k_num_documento" name="k_num_documento" placeholder="Numero usuario">
-                    </div>
-                    <div class="form-group">
-                        <label for="name1">Tipo de documento</label>
-                        <input type="text" class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Numero Perfil">
-                    </div>
-                    <div class="form-group">
-                        <label for="email1">Primer nombre</label>
-                        <input type="text" class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="email1">Segundo nombre</label>
-                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Nombre">
-                    </div>
-                    <div class="form-group ">
-                        <label for="pass1">Primer apellido</label>
-                        <input type="text" class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Apellido">
-                    </div>
-                    <div class="form-group ">
-                        <label for="pass1">Segundo apellido</label>
-                        <input type="text" class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Apellido">
-                    </div>
-                    
-                </div>
-                <!-- ./Datos basicos-->
-
-                <!-- Información médica-->
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group ">
-                        <label for="pass2">Correo</label>
-                        <input type="email" class="form-control"  id="n_correo" name="n_correo" placeholder="ejemplo@restaurante.com">
-                    </div>
-                    <div class="form-group ">
-                        <label for="celphone">Fecha de nacimiento</label>
-                        <input type="text" class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="99/12/12">
-                    </div>
-                    <div class="form-group ">
-                        <label for="edad">Genero</label>
-                        <input type="text" class="form-control" id="o_genero" name="o_genero" placeholder="Género">
-                    </div>				
-                </div> 
-            </div>
-            <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
-        </form>
-
+             <input type="hidden" id="txtId" name="txtId" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%>">
+        <table  class="table table-striped table-dark">
+            <tr>
+                <td>Titulo</td>
+                <td><input type="text" id="txtTitulo" name="txtTitulo" value="<%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%>"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" class="btn btn-success" value="Aceptar" onclick="submit();"></td>
+            </tr>            
+        </table>
     </div>
     <!-- Pié de página -->
     <footer class="footer text-faded text-center py-5">
@@ -180,4 +133,7 @@
   </body>
 
 </html>
+
+
+
 

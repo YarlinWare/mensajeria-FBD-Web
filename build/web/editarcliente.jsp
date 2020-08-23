@@ -10,9 +10,6 @@
     Author     : ASUS
 --%>
 <%@page import="java.util.List"%>
-
-<%@page import="java.sql.ResultSet"%>
-<%@page import="database.DBCliente"%>
 <%@page import="logica.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -97,50 +94,6 @@
             <div class="row ">
                 <!-- Datos basicos-->			
                 <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="numero_usuario">#Usuario</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("k_num_documento")).getK_num_documento()%>"
-                               class="form-control" id="txtId" name="txtId" placeholder="Nuemro de identificación">
-                    </div>
-                    <div class="form-group">
-                        <label for="numero_perfil">#Perfil</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("k_tipo_documento")).getK_tipo_documento()%>" 
-                               class="form-control" id="k_tipo_documento" name="k_tipo_documento" placeholder="Tipo identificacion">
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("n_primer_nombre")).getN_primer_nombre()%>" 
-                               class="form-control" id="n_primer_nombre" name="n_primer_nombre" placeholder="Primer nombre" z>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("n_segundo_nombre")).getN_segundo_nombre()%>" 
-                               class="form-control" id="n_segundo_nombre" name="n_segundo_nombre" placeholder="Segundo nombre" z>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("n_primer_apellido")).getN_primer_apellido()%>" 
-                               class="form-control" id="n_primer_apellido" name="n_primer_apellido" placeholder="Primer apellido" z>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("n_segundo_apellido")).getN_segundo_apellido()%>" 
-                               class="form-control" id="n_segundo_apellido" name="n_segundo_apellido" placeholder="Segundo apellido" z>
-                    </div>
-                    <div class="form-group ">
-                        <label for="apellido">Género</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("o_genero")).getO_genero()%>" class="form-control" id="o_genero" name="o_genero" placeholder="Género">
-                    </div>
-                    <div class="form-group ">
-                        <label for="apellido">Género</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("f_nacimiento")).getF_nacimiento()%>" 
-                               class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="Fecha nacimiento">
-                    </div>
-                    <div class="form-group ">
-                        <label for="apellido">Género</label>
-                        <input type="text" value="<%= ((Cliente)session.getAttribute("n_correo")).getN_correo()%>" 
-                               class="form-control" id="n_correo" name="n_correo" placeholder="Correo">
-                    </div>
                     
                 </div>
                 <!-- ./Datos basicos-->

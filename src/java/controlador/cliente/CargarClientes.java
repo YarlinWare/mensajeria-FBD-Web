@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlado.cliente;
+package controlador.cliente;
 
 import database.DBCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +20,8 @@ import logica.Cliente;
  *
  * @author ASUS
  */
-@WebServlet(name = "InsertarCliente", urlPatterns = {"/InsertarCliente"})
-public class InsertarCliente extends HttpServlet {
+@WebServlet(name = "CargarCliente", urlPatterns = {"/CargarCliente"})
+public class CargarClientes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,22 +35,39 @@ public class InsertarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
         Cliente c = new Cliente();
         DBCliente clienteDB = new DBCliente();
-        try {
-            c.setK_num_documento(Integer.parseInt(request.getParameter("k_num_documento")));
-            c.setK_tipo_documento(request.getParameter("k_tipo_documento"));
-            c.setN_primer_nombre(request.getParameter("n_primer_nombre"));
-            c.setN_segundo_nombre(request.getParameter("n_segundo_nombre"));
-            c.setN_primer_apellido(request.getParameter("n_primer_apellido"));
-            c.setN_segundo_apellido(request.getParameter("n_segundo_apellido"));
-            c.setO_genero(request.getParameter("o_genero"));
-            c.setF_nacimiento(request.getParameter("f_nacimiento"));
-            c.setN_correo(request.getParameter("n_correo"));
+        try  {
+            int num_doc = Integer.parseInt(request.getParameter("num_doc"));
+            String tipo_doc = request.getParameter("tipo_doc");
+            String opc = request.getParameter("opc");
+            out.write(opc);
+            ResultSet res = clienteDB.getClienteById(num_doc, tipo_doc);
+            if (res.next()){
+                c.setK_num_documento(res.getInt("k_num_documento"));
+                c.setK_tipo_documento("k_tipo_documento");
+                c.setN_primer_nombre("n_primer_nombre");
+                c.setN_segundo_nombre("n_segundo_nombre");
+                c.setN_primer_apellido("n_primer_apellido");
+                c.setN_segundo_apellido("n_segundo_apellido");
+                c.setO_genero("o_genero");
+                c.setF_nacimiento("f_nacimiento");
+                c.setN_correo("n_correo");    
+                
+            }
+            if(opc.equals("edit")){
+                request.getSession().setAttribute("cliente", c);
+                response.sendRedirect("editarcliente.jsp"); 
+            }
+            if(opc.equals("delete")){
+                clienteDB.borrarCliente(c);
+                response.sendRedirect("listarclientes.jsp");
+            }
             
-            clienteDB.insertarCliente(c);
+        }catch(Exception e){
             
-            response.sendRedirect("listaclientes");
         }finally {            
             out.close();
         }

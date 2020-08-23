@@ -4,9 +4,17 @@
         <servlet-name>CargarClientes</servlet-name>
         <servlet-class>controlado.cliente.CargarClientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultarServicio</servlet-name>
+        <servlet-class>controlador.servicio.ConsultarServicio</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CargarClientes</servlet-name>
         <url-pattern>/CargarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarServicio</servlet-name>
+        <url-pattern>/ConsultarServicio</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

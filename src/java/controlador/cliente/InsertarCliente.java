@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlado.cliente;
+package controlador.cliente;
 
 import database.DBCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logica.Cliente;
-import static java.lang.System.out;
 
 /**
  *
  * @author ASUS
  */
-@WebServlet(name = "ActualizarCliente", urlPatterns = {"/ActualizarCliente"})
-public class ActualizarCliente extends HttpServlet {
+@WebServlet(name = "InsertarCliente", urlPatterns = {"/InsertarCliente"})
+public class InsertarCliente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +34,7 @@ public class ActualizarCliente extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");         
+        response.setContentType("text/html;charset=UTF-8");
         Cliente c = new Cliente();
         DBCliente clienteDB = new DBCliente();
         try {
@@ -47,10 +47,10 @@ public class ActualizarCliente extends HttpServlet {
             c.setO_genero(request.getParameter("o_genero"));
             c.setF_nacimiento(request.getParameter("f_nacimiento"));
             c.setN_correo(request.getParameter("n_correo"));
-           
-           clienteDB.actualizarCliente(c);
-           
-           response.sendRedirect("listaclientes.jsp");
+            
+            clienteDB.insertarCliente(c);
+            
+            response.sendRedirect("listarclientes.jsp");
         }finally {            
             out.close();
         }
