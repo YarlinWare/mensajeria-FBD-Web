@@ -169,5 +169,9 @@ public class DBMensajero {
      public String getMensaje() {
         return cn.getMensaje();
     }
+
+    public void borrarMensajero(Object m) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
     

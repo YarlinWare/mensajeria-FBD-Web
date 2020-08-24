@@ -43,7 +43,7 @@
             </a>
             <div class="d-flex aling-item-end pr-3 btn-ingreso-registro">
                 <!--<a href="login.jsp" class="btn btn-ingreso nav-link text-uppercase text-expanded">Ingresar</a>-->
-                <a href="registrarcliente.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
+                <a href="registrarmensajero.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
             </div>
         </nav>
         <!-- Menu acceso -->
@@ -100,9 +100,12 @@
                 <th scope="col">Segundo nombre</th>
                 <th scope="col">Primer apellido</th>
                 <th scope="col">Segundo apellido</th>
+                <th scope="col">Telefono</th>
                 <th scope="col">Genero</th>
                 <th scope="col">Fecha nacimiento</th>
-                <th scope="col">Correo</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">numero de seguridad </th>
+                <th scope="col">Medio de transporte </th>
                 </thead>
                 </tr>
                 <% while (mensajero.next()) {%>
@@ -117,17 +120,11 @@
                     <td><%= mensajero.getString("o_genero")%></td>                        
                     <td><%= mensajero.getString("f_nacimiento")%></td>
                     <td><%= mensajero.getString("d_dir")%></td>
+                    <td><%= mensajero.getString("q_num_seguridad_social")%></td>
+                    <td><%= mensajero.getString("o_medio_transporte")%></td>
                     <td class="links">
-                        <a href="CargarMensajero?opc=edit&num_doc=
-                           <%= mensajero.getInt("k_num_documento")%>
-                           &tipo_doc=
-                           <%= mensajero.getString("k_tipo_documento")%>
-                           ">Editar</a>
-                        <a href="CargarMensajero?opc=delete&num_doc=
-                           <%= mensajero.getInt("k_num_documento")%>
-                           &tipo_doc=
-                           <%= mensajero.getString("k_tipo_documento")%>
-                           ">Borrar</a>
+                        <a href="CargarMensajero?opc=edit&num_doc=<%= mensajero.getInt("k_num_documento")%>&tipo_doc=<%= mensajero.getString("k_tipo_documento")%>">Editar</a>
+                        <a href="CargarMensajero?opc=delete&num_doc=<%= mensajero.getInt("k_num_documento")%>&tipo_doc=<%= mensajero.getString("k_tipo_documento")%>">Borrar</a>
                     </td>
                 </tr>
                 <% }%>

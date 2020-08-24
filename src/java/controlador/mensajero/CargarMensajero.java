@@ -65,9 +65,9 @@ public class CargarMensajero extends HttpServlet {
                 response.sendRedirect("editarmensajero.jsp"); 
             }
             if(opc.equals("delete")){
-                //clienteDB.borrarCliente(c);
-                mensajeroDB.borrarMensajero(num_doc, tipo_doc);
-                response.sendRedirect("listamensajero.jsp");
+                mensajeroDB.borrarMensajero(c);
+                //mensajeroDB.borrarMensajero(num_doc, tipo_doc);
+                response.sendRedirect("listamensajeros.jsp");
             }
             
         }catch(Exception e){

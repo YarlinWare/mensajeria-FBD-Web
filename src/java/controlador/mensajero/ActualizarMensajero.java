@@ -21,8 +21,8 @@ import logica.Mensajero;
  *
  * @author kjan
  */
-@WebServlet(name = "actualizarmensajero", urlPatterns = {"/actualizarmensajero"})
-public class actualizarmensajero extends HttpServlet {
+@WebServlet(name = "ActualizarMensajero", urlPatterns = {"/ActualizarMensajero"})
+public class ActualizarMensajero extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -53,7 +53,7 @@ public class actualizarmensajero extends HttpServlet {
            
            mensajeroDB.actualizarMensajero(c);
            
-           response.sendRedirect("listaclientes.jsp");
+           response.sendRedirect("listamensajeros.jsp");
         }finally {            
             out.close();
         }

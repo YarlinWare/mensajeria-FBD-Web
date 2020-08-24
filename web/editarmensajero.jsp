@@ -3,7 +3,7 @@
     Created on : 22/08/2020, 08:45:54 PM
     Author     : kjan
 --%>
-
+<%@page import="java.util.List"%>
 <%@page import="logica.Mensajero"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@
         <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
         <div class="d-flex aling-item-end pr-3 btn-ingreso-registro">
           <!--<a href="login.jsp" class="btn btn-ingreso nav-link text-uppercase text-expanded">Ingresar</a>-->
-          <a href="registramensajero.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
+          <a href="registrarmensajero.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
         </div>
       </nav>
     <!-- Menu acceso -->
@@ -82,7 +82,7 @@
            < <div class="card-header text-center">
                 <h2 class="titulo">Información de registro</h2>
             </div>
-           <form id="frmActualizarBlog" action="ActualizarCliente" method="POST">
+           <form id="frmActualizarBlog" action="ActualizarMensajero" method="POST">
              
         <table  class="table table-striped table-dark">
  
