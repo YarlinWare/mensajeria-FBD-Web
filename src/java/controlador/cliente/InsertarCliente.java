@@ -36,45 +36,38 @@ public class InsertarCliente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         Cliente c = new Cliente();
-        DBCliente clienteDB = new DBCliente();
-        try {
+        DBCliente clienteDB = new DBCliente();                
+          try{                
+                c.setK_num_documento(Integer.parseInt(request.getParameter("num_documento")));
+                c.setK_tipo_documento(request.getParameter("tipo_documento"));
+                c.setN_primer_nombre(request.getParameter("primer_nombre"));
+                c.setN_segundo_nombre(request.getParameter("segundo_nombre"));
+                c.setN_primer_apellido(request.getParameter("primer_apellido"));
+                c.setN_segundo_apellido(request.getParameter("segundo_apellido"));
+                c.setO_genero(request.getParameter("genero"));
+                c.setF_nacimiento(request.getParameter("nacimiento"));
+                c.setN_correo(request.getParameter("correo"));
             
-            /*int K_num_documento=Integer.parseInt(request.getParameter("num_documento"));
-            String K_tipo_documento=(request.getParameter("tipo_documento"));
-            String N_primer_nombre=(request.getParameter("primer_nombre"));
-            String N_segundo_nombre=(request.getParameter("segundo_nombre"));
-            String N_primer_apellido=(request.getParameter("primer_apellido"));
-            String N_segundo_apellido=(request.getParameter("segundo_apellido"));
-            String O_genero=(request.getParameter("genero"));
-            //String F_nacimiento=(request.getParameter("nacimiento"));
-            String N_correo=(request.getParameter("correo"));*/
-            
-            
-            
-            /*int K_num_documento=Integer.parseInt(request.getParameter("num_documento"));
-            String K_tipo_documento=(request.getParameter("tipo_documento"));
-            String N_primer_nombre=(request.getParameter("primer_nombre"));
-            String N_segundo_nombre=(request.getParameter("segundo_nombre"));
-            String N_primer_apellido=(request.getParameter("primer_apellido"));
-            String N_segundo_apellido=(request.getParameter("segundo_apellido"));
-            String O_genero=(request.getParameter("genero"));
-            //String F_nacimiento=(request.getParameter("nacimiento"));
-            String N_correo=(request.getParameter("correo"));*/
-            
-            c.setK_num_documento(11134);
-            c.setK_tipo_documento("CC");
-            c.setN_primer_nombre("N_primer_nombre");
-            //c.setN_segundo_nombre(N_segundo_nombre);
-            c.setN_primer_apellido("N_primer_apellido");
-            //c.setN_segundo_apellido(N_segundo_apellido);
-            //c.setO_genero(O_genero);
-            c.setF_nacimiento("2020-12-07");//c.setF_nacimiento(F_nacimiento);
-            //c.setN_correo(N_correo);
-            clienteDB.insertarCliente(c);            
-            response.sendRedirect("listaclientes.jsp");
-        }finally {            
-            out.close();
-        }
+                clienteDB.insertarCliente(c);
+                out.println("Numero documento ["+ c.getK_num_documento()+"] <br>");
+                out.println("Tipo de documento ["+ c.getK_tipo_documento()+ "] <br>");
+                out.println("Primer nombre ["+ c.getN_primer_nombre()+ "] <br>");
+                out.println("Primer apellido ["+ c.getN_primer_apellido()+ "] <br>");
+                
+                //response.sendRedirect("listaclientes.jsp");
+            }
+            catch(NumberFormatException e ){
+                out.println("Numero documento ["+ c.getK_num_documento()+"] <br>");
+                out.println("Tipo de documento ["+ c.getK_tipo_documento()+ "] <br>");
+                out.println("Primer nombre ["+ c.getN_primer_nombre()+ "] <br>");
+                out.println("Primer apellido ["+ c.getN_primer_apellido()+ "] <br>");;
+            }
+            catch(Exception e1){
+                out.println("Numero documento ["+ c.getK_num_documento()+"] <br>");
+                out.println("Tipo de documento ["+ c.getK_tipo_documento()+ "] <br>");
+                out.println("Primer nombre ["+ c.getN_primer_nombre()+ "] <br>");
+                out.println("Primer apellido ["+ c.getN_primer_apellido()+ "] <br>");
+            }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

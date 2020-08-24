@@ -45,7 +45,7 @@ public class DBServicio {
         return res;
     }
 
-    public ResultSet getCliente() throws SQLException {
+    public ResultSet getServicio() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement(" "
                 + " SELECT * FROM servicio "
                 + " ORDER BY k_tipo_documento, k_num_documento");
@@ -58,26 +58,24 @@ public class DBServicio {
         Date date = new Date();
         //DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
         try {
-            PreparedStatement pstm = cn.getConexion().prepareStatement("INSERT INTO cliente ("
-                    + " k_id_servicio,"
+            PreparedStatement pstm = cn.getConexion().prepareStatement("INSERT INTO servicio ("
                     + "k_id_tipo_paquete,"
                     + " k_num_documento_usuario,"
                     + " k_tipo_documento_usuario,"
-                    + "k_num_documento_mensajero,"
-                    + "k_tipo_documento_mensajero,"
-                    + "f_fecha,"
-                    + "f_hora,"
-                    +"v_valor_servicio"
-                    + " values(?,?,?,?,?,?,?,?,?)");
-            pstm.setLong(1, s.getK_id_servicio());
-            pstm.setLong(2, s.getK_id_tipo_paquete());
-            pstm.setLong(3, s.getK_num_documento_usuario());
-            pstm.setString(4, s.getK_tipo_documento_usuario());
-            pstm.setLong(5, s.getK_num_documento_mensajero());
-            pstm.setString(6, s.getK_tipo_documento_mensajero());
-            pstm.setString(7, s.getF_fecha());
-            pstm.setString(8, s.getF_hora());
-            pstm.setLong(9, s.getV_valor_servicio());
+                    + " k_num_documento_mensajero,"
+                    + " k_tipo_documento_mensajero,"
+                    + " f_fecha,"
+                    + " f_hora)"
+                    //+ " v_valor_servicio)"
+                    + " values(?,?,?,?,?,?,?)");
+            pstm.setLong(1, s.getK_id_tipo_paquete());
+            pstm.setLong(2, s.getK_num_documento_usuario());
+            pstm.setString(3, s.getK_tipo_documento_usuario());
+            pstm.setLong(4, s.getK_num_documento_mensajero());
+            pstm.setString(5, s.getK_tipo_documento_mensajero());
+            pstm.setString(6, s.getF_fecha());
+            pstm.setString(7, s.getF_hora());
+           // pstm.setLong(8, s.getV_valor_servicio());
             
 
             pstm.executeUpdate();

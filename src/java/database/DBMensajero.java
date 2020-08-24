@@ -52,17 +52,17 @@ public class DBMensajero {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("INSERT INTO mensajero ("
                     + " k_num_documento,"
-                    + "k_tipo_documento,"
+                    + " k_tipo_documento,"
                     + " n_primer_nombre,"
                     + " n_segundo_nombre,"
-                    + "n_primer_apellido,"
-                    + "n_segundo_apellido,"
-                    +"q_tefefono,"
-                    + "o_genero,"
-                    + "f_nacimiento,"
-                    +"d_dir,"
-                    +"q_num_seguridad_social,"
-                    +"o_medio_transporte"
+                    + " n_primer_apellido,"
+                    + " n_segundo_apellido,"
+                    + " q_tefefono,"
+                    + " o_genero,"
+                    + " f_nacimiento,"
+                    + " d_dir,"
+                    + " q_num_seguridad_social,"
+                    + " o_medio_transporte)"
                     + " values(?,?,?,?,?,?,?,?,?,?,?,?)");
             pstm.setLong(1, m.getK_num_documento());
             pstm.setString(2, m.getK_tipo_documento());
@@ -91,31 +91,32 @@ public class DBMensajero {
 
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("UPDATE mensajero"
-                    + " SET k_num_documento = ?,"
-                    + " k_tipo_documento = ? "
+                    + " SET "
                     + " n_primer_nombre= ? "
                     + " n_segundo_nombre= ? "
-                    + "n_primer_apellido= ? "
-                    + "n_segundo_apellido= ? "
-                    +"q_tefefono = ?"
-                    + "o_genero = ?"
-                    + "f_nacimiento = ?"
-                    +"d_dir = ?"
-                    +"q_num_seguridad_social = ? "
-                    +"o_medio_transporte = ?"
+                    + " n_primer_apellido= ? "
+                    + " n_segundo_apellido= ? "
+                    + " q_tefefono = ?"
+                    + " o_genero = ?"
+                    + " f_nacimiento = ?"
+                    + " d_dir = ?"
+                    + " q_num_seguridad_social = ? "
+                    + " o_medio_transporte = ?"
                     + " WHERE  k_num_documento = ? AND k_tipo_documento = ?");
-            pstm.setLong(1, m.getK_num_documento());
-            pstm.setString(2, m.getK_tipo_documento());
-            pstm.setString(3, m.getN_primer_nombre());
-            pstm.setString(4, m.getN_segundo_nombre());
-            pstm.setString(5, m.getN_primer_apellido());
-            pstm.setString(6, m.getN_segundo_apellido());
-            pstm.setString(7, m.getQ_tefefono());
-            pstm.setString(8, m.getO_genero());
-            pstm.setString(9, m.getF_nacimiento());
-            pstm.setString(10, m.getD_dir());
-            pstm.setInt(11, m.getQ_num_seguridad_social());
-            pstm.setString(12, m.getO_medio_transporte());
+
+            pstm.setString(1, m.getN_primer_nombre());
+            pstm.setString(2, m.getN_segundo_nombre());
+            pstm.setString(3, m.getN_primer_apellido());
+            pstm.setString(4, m.getN_segundo_apellido());
+            pstm.setString(5, m.getQ_tefefono());
+            pstm.setString(6, m.getO_genero());
+            pstm.setString(7, m.getF_nacimiento());
+            pstm.setString(8, m.getD_dir());
+            pstm.setInt(9, m.getQ_num_seguridad_social());
+            pstm.setString(10, m.getO_medio_transporte());
+            pstm.setLong(11, m.getK_num_documento());
+            pstm.setString(12, m.getK_tipo_documento());
+
             
             pstm.executeUpdate();
 

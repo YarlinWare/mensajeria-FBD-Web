@@ -4,6 +4,8 @@
     Author     : kjan
 --%>
 
+<%@page import="logica.Servicio"%>
+<%@page import="database.DBServicio"%>
 <%@page import="logica.Mensajero"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,7 +39,7 @@
         <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
         <div class="d-flex aling-item-end pr-3 btn-ingreso-registro">
           <!--<a href="login.jsp" class="btn btn-ingreso nav-link text-uppercase text-expanded">Ingresar</a>-->
-          <a href="registramensajero.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
+          <a href="solicitarservicio.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
         </div>
       </nav>
     <!-- Menu acceso -->
@@ -77,7 +79,7 @@
       </div>
     </nav>
     
-    <div class="container">
+        <div class="container">
         <form id="nuevoPedido" method="GET" enctype="multipart/form-data" class="pt-3 pb-5" >
             <div class="row ">
                 <!-- Datos basicos-->			
@@ -89,8 +91,8 @@
                     <div class="form-group">
                         <label for="name1">Tipo de documento Usuario</label>
                         <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" placeholder="Tipo de documento">
-                    </div>
-                    <div class="form-group">
+                     </div>
+                      <!--<div class="form-group">
                         <label for="name1">Número de documento Mensajero</label>
                         <input type="number" class="form-control" id="num_documento" name="num_documento" placeholder="Numero documento Mensajero">
                     </div>
@@ -98,27 +100,27 @@
                         <label for="name1">Tipo de documento Mensajero</label>
                         <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" placeholder="Tipo de documento">
                     </div>
-                   
+                   -->
                     
                 </div>
               
                   
-                <!-- Salida y llegada-->
+                <!-- Salida y llegada--><!--
                 <div class="col-sm-12 col-md-6">
-                     <br> <br> <br> <br>
+                     <br> <br> <br> <br>-->
                      <div class="form-group ">
                         <label for="pass1">Tipo de paquete</label>
-                        <input type="number" id="id_tipo_paquete" name="id_tipo_paquete" value="">
+                        <input type="number" id="k_id_tipo_paquete" name="k_id_tipo_paquete" value="">
                     </div>
-                    <div class="form-group ">
+                     <div class="form-group ">
                         <label for="pass1">Fecha</label>
-                        <input type="date" id="fecha" name="fecha_envio" placeholder="24/08/2020">
+                        <input type="text" id="fecha_envio" name="fecha_envio" placeholder="24/08/2020">
                     </div>
                     <div class="form-group ">
                         <label for="pass1">Hora</label>
-                        <input type="text" id="hora" name="hora_envio" placeholder="14:00">
+                        <input type="text" id="hora_envio" name="hora_envio" placeholder="14:00">
                     </div>
-                    
+                    -->
                     <!-- ./Direcciones-->
                     <!--
                     <div class="form-group ">
@@ -135,6 +137,67 @@
     
             <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
         </form> 
+    </div>
+     <%if (!request.getParameterMap().isEmpty()) {
+          
+                DBServicio servicioDB = new DBServicio();
+                
+          try{
+                Servicio c = new Servicio();
+                //Convertir el codigo postal a un valor num�rico
+                /*long K_num_documento=(Integer.parseInt(request.getParameter("num_documento")));
+                String K_tipo_documento=(request.getParameter("tipo_documento"));
+                String N_primer_nombre=(request.getParameter("primer_nombre"));
+                String N_segundo_nombre=(request.getParameter("segundo_nombre"));
+                String N_primer_apellido=(request.getParameter("primer_apellido"));
+                String N_segundo_apellido=(request.getParameter("segundo_apellido"));
+                String O_genero=(request.getParameter("genero"));
+                String F_nacimiento=(request.getParameter("nacimiento"));
+                String N_correo=(request.getParameter("correo"));  */ 
+  
+
+                
+                //c.setK_id_servicio(Integer.parseInt(request.getParameter("k_id_servicio")));
+                c.setK_id_tipo_paquete(Integer.parseInt(request.getParameter("k_id_tipo_paquete")));
+                c.setK_num_documento_usuario(Integer.parseInt(request.getParameter("num_documento")));
+                c.setK_tipo_documento_usuario(request.getParameter("tipo_documento"));
+               // c.setK_num_documento_mensajero(Integer.parseInt(request.getParameter("num_documento")));
+                //c.setK_tipo_documento_mensajero(request.getParameter("tipo_documento"));
+                c.setF_fecha(request.getParameter("fecha_envio"));
+                c.setF_hora(request.getParameter("hora_envio"));
+                /*c.setV_valor_servicio(Integer.parseInt(request.getParameter("v_valor_servicio")));
+                */
+                
+                servicioDB.insertarServicio(c);
+               // out.println("id servicio ["+ c.getK_id_servicio()+"] <br>");
+                out.println("Tipo de paquete ["+ c.getK_id_tipo_paquete()+ "] <br>");
+                out.println("documento usuario ["+ c.getK_num_documento_usuario()+ "] <br>");
+                out.println("tipo de documento de usuario ["+ c.getK_tipo_documento_usuario()+ "] <br>");
+                out.println("documento mensajero ["+ c.getK_num_documento_mensajero()+ "] <br>");
+                out.println("tipo de documento de mensajero ["+ c.getK_tipo_documento_mensajero()+ "] <br>");
+                out.println("fecha  ["+ c.getF_fecha()+ "] <br>");
+                out.println("hora  ["+ c.getF_hora()+ "] <br>");
+                /*out.println("valor del servicio  ["+ c.getV_valor_servicio()+ "] <br>");
+                   */
+            //response.sendRedirect("listaclientes.jsp");
+            }
+            catch(NumberFormatException e ){
+                out.println("Municipio ["+ request.getParameter("num_documento")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("tipo_documento")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("k_id_tipo_paquete")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("primer_apellido")+ "] <br>");
+                out.println("Error --> " + "El código postal es requerido y debe ser numérico");
+            }
+            catch(Exception e1){
+                out.println("Municipio ["+ request.getParameter("num_documento")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("tipo_documento")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("k_id_tipo_paquete")+ "] <br>");
+                out.println("Municipio ["+ request.getParameter("primer_apellido")+ "] <br>");
+                out.println("Error --> " + e1 + e1.getMessage());
+            }
+            
+        }%>
+
     </div>
     <!-- Pié de página -->
     <footer class="footer text-faded text-center py-5">
