@@ -21,12 +21,12 @@ public class DBMensajero {
     public DBMensajero() {
         cn = new DBConexion();
     }
-    public ResultSet getMensajeroById(int k_num_documento,String k_tipo_documento) throws SQLException {
+    public ResultSet getMensajeroById(long k_num_documento,String k_tipo_documento) throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement(" "
                 + "SELECT * FROM mensajero "
                 + "WHERE  k_num_documento = ? AND k_tipo_documento = ?");
        
-        pstm.setInt(1, k_num_documento);
+        pstm.setLong(1, k_num_documento);
         pstm.setString(2, k_tipo_documento);
         
 
@@ -64,7 +64,7 @@ public class DBMensajero {
                     +"q_num_seguridad_social,"
                     +"o_medio_transporte"
                     + " values(?,?,?,?,?,?,?,?,?,?,?,?)");
-            pstm.setInt(1, m.getK_num_documento());
+            pstm.setLong(1, m.getK_num_documento());
             pstm.setString(2, m.getK_tipo_documento());
             pstm.setString(3, m.getN_primer_nombre());
             pstm.setString(4, m.getN_segundo_nombre());
@@ -104,7 +104,7 @@ public class DBMensajero {
                     +"q_num_seguridad_social = ? "
                     +"o_medio_transporte = ?"
                     + " WHERE  k_num_documento = ? AND k_tipo_documento = ?");
-            pstm.setInt(1, m.getK_num_documento());
+            pstm.setLong(1, m.getK_num_documento());
             pstm.setString(2, m.getK_tipo_documento());
             pstm.setString(3, m.getN_primer_nombre());
             pstm.setString(4, m.getN_segundo_nombre());
@@ -130,7 +130,7 @@ public class DBMensajero {
             PreparedStatement pstm = cn.getConexion().prepareStatement("DELETE FROM mensajero "
                     + "WHERE  k_num_documento = ? AND k_tipo_documento = ?");
 
-            pstm.setInt(1, m.getK_num_documento());
+            pstm.setLong(1, m.getK_num_documento());
             pstm.setString(2, m.getK_tipo_documento());
             pstm.setString(3, m.getN_primer_nombre());
             pstm.setString(4, m.getN_segundo_nombre());
@@ -142,6 +142,21 @@ public class DBMensajero {
             pstm.setString(10, m.getD_dir());
             pstm.setInt(11, m.getQ_num_seguridad_social());
             pstm.setString(12, m.getO_medio_transporte());
+
+            pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+     public void borrarMensajero(long k_num_documento,String k_tipo_documento) {
+
+        try {
+            PreparedStatement pstm = cn.getConexion().prepareStatement("DELETE FROM mensajero "
+                    + "WHERE  k_num_documento = ? AND k_tipo_documento = ?");
+
+            pstm.setLong(1, k_num_documento);
+            pstm.setString(2, k_tipo_documento);
 
             pstm.executeUpdate();
 

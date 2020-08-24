@@ -44,19 +44,30 @@ public class CargarMensajero extends HttpServlet {
             String opc = request.getParameter("opc");
             out.write(opc);
             ResultSet res = mensajeroDB.getMensajeroById(num_doc, tipo_doc);
-            if (res.next()){
+             if (res.next()){
                 c.setK_num_documento(res.getInt("k_num_documento"));
-                c.setK_tipo_documento("k_tipo_documento");
-                c.getN_primer_nombre();
+                c.setK_tipo_documento(res.getString("k_tipo_documento"));
+                c.setN_primer_nombre(res.getString("n_primer_nombre"));
+                c.setN_segundo_nombre(res.getString("n_segundo_nombre"));
+                c.setN_primer_apellido(res.getString("n_primer_apellido"));
+                c.setN_segundo_apellido(res.getString("n_segundo_apellido"));
+                c.setQ_tefefono(res.getString("q_tefefono"));
+                c.setO_genero(res.getString("o_genero"));
+                c.setF_nacimiento(res.getString("f_nacimiento"));
+                c.setD_dir(res.getString("d_dir"));   
+                c.setQ_num_seguridad_social(res.getInt("q_num_seguridad_social"));
+                c.setO_medio_transporte(res.getString("o_medio_transporte"));
+               
                 
             }
             if(opc.equals("edit")){
                 request.getSession().setAttribute("mensajero", c);
-                response.sendRedirect("actualizarmensajero.jsp");
+                response.sendRedirect("editarmensajero.jsp"); 
             }
             if(opc.equals("delete")){
-                mensajeroDB.borrarMensajero(c);
-                response.sendRedirect("listamensajeros.jsp");
+                //clienteDB.borrarCliente(c);
+                mensajeroDB.borrarMensajero(num_doc, tipo_doc);
+                response.sendRedirect("listamensajero.jsp");
             }
             
         }catch(Exception e){

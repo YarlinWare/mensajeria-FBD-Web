@@ -1,16 +1,10 @@
 <%-- 
-    Document   : editarcliente
-    Created on : 22/08/2020, 03:25:44 PM
-    Author     : ASUS
+    Document   : actualizarmensajero
+    Created on : 22/08/2020, 08:45:54 PM
+    Author     : kjan
 --%>
 
-<%-- 
-    Document   : index.jsp
-    Created on : 15-mar-2020, 16.14.30
-    Author     : ASUS
---%>
-<%@page import="java.util.List"%>
-<%@page import="logica.Cliente"%>
+<%@page import="logica.Mensajero"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inicio | Editar cliente</title>
+    <title>Inicio | Editar Mensajero</title>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +37,7 @@
         <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.jsp">Mensajería FBD</a>
         <div class="d-flex aling-item-end pr-3 btn-ingreso-registro">
           <!--<a href="login.jsp" class="btn btn-ingreso nav-link text-uppercase text-expanded">Ingresar</a>-->
-          <a href="registrarcliente.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
+          <a href="registramensajero.jsp" class="btn btn-info nav-link text-uppercase text-expanded">Registrar</a>
         </div>
       </nav>
     <!-- Menu acceso -->
@@ -65,7 +59,7 @@
             <li class="nav-item  px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="index.jsp">Inicio</a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listaclientes.jsp">Clientes</a>
             </li>
             <li class="nav-item px-lg-4">
@@ -75,7 +69,7 @@
               <a class="nav-link text-uppercase text-expanded" href="consultarservicio.jsp">Consultar Servicio</a>
             </li>
             
-            <li class="nav-item px-lg-4">
+            <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="listamensajeros.jsp">Mensajeros</a>
             </li>
           </ul>
@@ -85,47 +79,62 @@
     
     <div class="container">
         <div class="pt-5 pb-5 formularioRegistro ">
-            <div class="card-header text-center">
+           < <div class="card-header text-center">
                 <h2 class="titulo">Información de registro</h2>
             </div>
-            <form id="frmActualizarBlog" action="ActualizarCliente" method="POST">
+           <form id="frmActualizarBlog" action="ActualizarCliente" method="POST">
              
         <table  class="table table-striped table-dark">
+ 
+
+  
             <tr>
                 <td>Número de documento</td>
-                <td><input type="text" id="k_num_documento"  name="k_num_documento" value="<%= ((Cliente)session.getAttribute("cliente")).getK_num_documento()%>"></td>
+                <td><input type="text" id="k_num_documento"  name="k_num_documento" value="<%= ((Mensajero)session.getAttribute("mensajero")).getK_num_documento()%>"></td>
             </tr>
             <tr>
                 <td>Tipo de documento</td>
-                <td><input type="text" id="k_tipo_documento"  name="k_tipo_documento" value="<%= ((Cliente)session.getAttribute("cliente")).getK_tipo_documento()%>"></td>
+                <td><input type="text" id="k_tipo_documento"  name="k_tipo_documento" value="<%= ((Mensajero)session.getAttribute("mensajero")).getK_tipo_documento()%>"></td>
             </tr>
             <tr>
                 <td>Primer nombre</td>
-                <td><input type="text" id="n_primer_nombre" name="n_primer_nombre" value="<%= ((Cliente)session.getAttribute("cliente")).getN_primer_nombre()%>"></td>
+                <td><input type="text" id="n_primer_nombre" name="n_primer_nombre" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_primer_nombre()%>"></td>
             </tr>
             <tr>
                 <td>Segundo nombre</td>
-                <td><input type="text" id="n_segundo_nombre" name="n_segundo_nombre" value="<%= ((Cliente)session.getAttribute("cliente")).getN_segundo_nombre()%>"></td>
+                <td><input type="text" id="n_segundo_nombre" name="n_segundo_nombre" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_segundo_nombre()%>"></td>
             </tr>
             <tr>
                 <td>Primer apellido</td>
-                <td><input type="text" id="n_primer_apellido" name="n_primer_apellido" value="<%= ((Cliente)session.getAttribute("cliente")).getN_primer_apellido()%>"></td>
+                <td><input type="text" id="n_primer_apellido" name="n_primer_apellido" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_primer_apellido()%>"></td>
             </tr>
             <tr>
                 <td>Segundo apellido</td>
-                <td><input type="text" id="n_segundo_apellido" name="n_segundo_apellido" value="<%= ((Cliente)session.getAttribute("cliente")).getN_segundo_apellido()%>"></td>
+                <td><input type="text" id="n_segundo_apellido" name="n_segundo_apellido" value="<%= ((Mensajero)session.getAttribute("mensajero")).getN_segundo_apellido()%>"></td>
+            </tr>
+            <tr>
+                <td>Telelfono</td>
+                <td><input type="text" id="q_tefefono" name="q_tefefono" value="<%= ((Mensajero)session.getAttribute("mensajero")).getQ_tefefono()%>"></td>
             </tr>
             <tr>
                 <td>Genero</td>
-                <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Cliente)session.getAttribute("cliente")).getO_genero()%>"></td>
+                <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Mensajero)session.getAttribute("mensajero")).getO_genero()%>"></td>
             </tr>
             <tr>
                 <td>Fecha de nacimiento</td>
-                <td><input type="text" id="f_nacimiento" name="f_nacimiento" value="<%= ((Cliente)session.getAttribute("cliente")).getF_nacimiento()%>"></td>
+                <td><input type="text" id="f_nacimiento" name="f_nacimiento" value="<%= ((Mensajero)session.getAttribute("mensajero")).getF_nacimiento()%>"></td>
             </tr>
             <tr>
-                <td>Correo</td>
-                <td><input type="text" id="n_correo" name="n_correo" value="<%= ((Cliente)session.getAttribute("cliente")).getN_correo()%>"></td>
+                <td>Direccion</td>
+                <td><input type="text" id="d_dir" name="d_dir" value="<%= ((Mensajero)session.getAttribute("mensajero")).getD_dir()%>"></td>
+            </tr>
+            <tr>
+                <td>Numero de Seguro</td>
+                <td><input type="text" id="d_dir" name="q_num_seguridad_social" value="<%= ((Mensajero)session.getAttribute("mensajero")).getQ_num_seguridad_social()%>"></td>
+            </tr>
+            <tr>
+                <td>Medio Transporte</td>
+                <td><input type="text" id="d_dir" name="o_medio_transporte" value="<%= ((Mensajero)session.getAttribute("mensajero")).getO_medio_transporte()%>"></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="button" class="btn btn-success" value="Aceptar" onclick="submit();"></td>
@@ -175,3 +184,4 @@
 
 </html>
 
+          
