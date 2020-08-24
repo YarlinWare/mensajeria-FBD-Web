@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="logica.ServicioCompleto"%>
+<%@page import="logica.Completo"%>
 <%@page import="database.DBServicio"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -86,27 +86,27 @@
             
             <tr>
                 <td>Fecha y hora de solicitud</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getF_fecha()%> a las <%= ((ServicioCompleto)session.getAttribute("servicio")).getF_hora()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getF_fecha()%> a las <%= ((Completo)session.getAttribute("servicio")).getF_hora()%></td>
             </tr> 
             <tr>
                 <td>Documento del Usuario</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getK_tipo_documento_usuario()%>: <%= ((ServicioCompleto)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getK_tipo_documento_usuario()%>: <%= ((Completo)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
             </tr> 
             <tr>
                 <td>Nombre Usuario</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getN_primer_nombre()%> <%= ((ServicioCompleto)session.getAttribute("servicio")).getN_primer_apellido()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getN_primer_nombre()%> <%= ((Completo)session.getAttribute("servicio")).getN_primer_apellido()%></td>
             </tr>
             <tr>
                 <td>Valor del servicio</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getV_valor_servicio()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getV_valor_servicio()%></td>
             </tr>   
             <tr>
                 <td>Tipo de paquete</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getN_tipo()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getN_tipo()%></td>
             </tr>
             <tr>
                 <td>Descripción del envío</td>
-                <td><%= ((ServicioCompleto)session.getAttribute("servicio")).getO_descripcion()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getO_descripcion()%></td>
             </tr>      
         </table>
     </div>

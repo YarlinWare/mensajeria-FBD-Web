@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="logica.Servicio"%>
+<%@page import="logica.Completo"%>
 <%@page import="database.DBServicio"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -86,24 +86,28 @@
             
             <tr>
                 <td>Fecha y hora de solicitud</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getF_fecha()%> a las <%= ((Servicio)session.getAttribute("servicio")).getF_hora()%></td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getF_fecha()%> a las <%= ((Completo)session.getAttribute("servicio")).getF_hora()%></td>
             </tr> 
             <tr>
-                <td>Num usuario</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_tipo_documento_usuario()%>: <%= ((Servicio)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
+                <td>Documento del Usuario</td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getK_tipo_documento_usuario()%>: <%= ((Completo)session.getAttribute("servicio")).getK_num_documento_usuario()%></td>
             </tr> 
             <tr>
-                <td>Tipo de paquete</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_tipo_paquete()%></td>
-            </tr>
-            <tr>
-                <td>ID Servicio</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getK_id_servicio()%></td>
+                <td>Nombre Usuario</td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getN_primer_nombre()%> <%= ((Completo)session.getAttribute("servicio")).getN_primer_apellido()%></td>
             </tr>
             <tr>
                 <td>Valor del servicio</td>
-                <td><%= ((Servicio)session.getAttribute("servicio")).getV_valor_servicio()%></td>
-            </tr>         
+                <td><%= ((Completo)session.getAttribute("servicio")).getV_valor_servicio()%></td>
+            </tr>   
+            <tr>
+                <td>Tipo de paquete</td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getN_tipo()%></td>
+            </tr>
+            <tr>
+                <td>Descripción del envío</td>
+                <td><%= ((Completo)session.getAttribute("servicio")).getO_descripcion()%></td>
+            </tr>      
         </table>
     </div>
     <!-- Pié de página -->

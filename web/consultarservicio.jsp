@@ -79,7 +79,7 @@
     </nav>
 
     <div class="container">
-    <form id="frmActualizarBlog" action="ConsultarServicio" method="POST">
+    <form id="frmActualizarBlog" action="ConsultarServicioDetallado" method="POST">
         <br><br>
         <table  class="table table-striped table-dark">
             <tr>
