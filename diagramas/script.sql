@@ -258,3 +258,18 @@ INSERT INTO trayecto (k_id_servicio, d_dir_origen, d_dir_destino )
 
 INSERT INTO trayecto (k_id_servicio, d_dir_origen, d_dir_destino )
 	VALUES (2, 'AV Jiménez', 'Calle 45');
+
+
+
+SELECT s.k_id_servicio, c.k_num_documento, c.k_tipo_documento,
+	   	concat(c.n_primer_nombre,' ', c.n_primer_apellido),
+	   	t.n_tipo, t.o_descripcion, s.f_fecha, s.f_hora,
+	  	s.v_valor_servicio, t.k_id_tipo_paquete
+FROM servicio AS s,
+	 	cliente AS c,
+	 	tipo_paquete AS t
+WHERE 	s.k_num_documento_usuario = c.k_num_documento
+		AND s.k_id_servicio= 1
+		AND s.k_id_tipo_paquete = 1
+		AND t.k_id_tipo_paquete = s.k_id_tipo_paquete
+ORDER BY c.k_num_documento;

@@ -44,7 +44,29 @@ public class DBServicio {
          */
         return res;
     }
-
+    
+    public ResultSet getServicioDetalladoById(int k_id_servicio,int k_id_tipo_paquete) throws SQLException {
+        PreparedStatement pstm = cn.getConexion().prepareStatement(" "
+                + " SELECT s.k_id_servicio, c.k_num_documento, c.k_tipo_documento," 
+                + "        c.n_primer_nombre, c.n_primer_apellido,"
+                + "        t.n_tipo, t.o_descripcion, s.f_fecha, s.f_hora,"
+                + "        s.v_valor_servicio, t.k_id_tipo_paquete "
+                + " FROM servicio AS s, "
+                + "      cliente AS c,"
+                + "      tipo_paquete AS t"
+                + " WHERE s.k_num_documento_usuario = c.k_num_documento" 
+                + "      AND s.k_id_servicio= ?"
+                + "      AND s.k_id_tipo_paquete = ?"
+                + "      AND t.k_id_tipo_paquete = s.k_id_tipo_paquete");       
+        pstm.setInt(1,k_id_servicio);
+        pstm.setInt(2,k_id_tipo_paquete);  
+        ResultSet res = pstm.executeQuery();
+        /*
+         res.close();	
+         */
+        return res;
+    }
+    
     public ResultSet getServicio() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement(" "
                 + " SELECT * FROM servicio "
