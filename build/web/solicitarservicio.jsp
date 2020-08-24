@@ -78,7 +78,63 @@
     </nav>
     
     <div class="container">
-
+        <form id="nuevoPedido" method="GET" enctype="multipart/form-data" class="pt-3 pb-5" >
+            <div class="row ">
+                <!-- Datos basicos-->			
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="name1">Número de documento Usuario</label>
+                        <input type="number" class="form-control" id="num_documento" name="num_documento" placeholder="Numero usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="name1">Tipo de documento Usuario</label>
+                        <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" placeholder="Tipo de documento">
+                    </div>
+                    <div class="form-group">
+                        <label for="name1">Número de documento Mensajero</label>
+                        <input type="number" class="form-control" id="num_documento" name="num_documento" placeholder="Numero documento Mensajero">
+                    </div>
+                    <div class="form-group">
+                        <label for="name1">Tipo de documento Mensajero</label>
+                        <input type="text" class="form-control" id="tipo_documento" name="tipo_documento" placeholder="Tipo de documento">
+                    </div>
+                   
+                    
+                </div>
+              
+                  
+                <!-- Salida y llegada-->
+                <div class="col-sm-12 col-md-6">
+                     <br> <br> <br> <br>
+                     <div class="form-group ">
+                        <label for="pass1">Tipo de paquete</label>
+                        <input type="number" id="id_tipo_paquete" name="id_tipo_paquete" value="">
+                    </div>
+                    <div class="form-group ">
+                        <label for="pass1">Fecha</label>
+                        <input type="date" id="fecha" name="fecha_envio" placeholder="24/08/2020">
+                    </div>
+                    <div class="form-group ">
+                        <label for="pass1">Hora</label>
+                        <input type="text" id="hora" name="hora_envio" placeholder="14:00">
+                    </div>
+                    
+                    <!-- ./Direcciones-->
+                    <!--
+                    <div class="form-group ">
+                        <label for="direccion1">Direccion de salida</label>
+                        <input type="text" class="form-control"  id="direccion_1" name="direccion1" placeholder="Carrera 1 #18-03">
+                    </div>
+                    <div class="form-group ">
+                        <label for="direccion2">Direccion de entrga</label>
+                        <input type="text" class="form-control" id="direccion_2" name="direccion2" placeholder="Calle 72 #37-12">
+                    </div>
+                    -->
+                </div> 
+            </div>
+    
+            <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
+        </form> 
     </div>
     <!-- Pié de página -->
     <footer class="footer text-faded text-center py-5">

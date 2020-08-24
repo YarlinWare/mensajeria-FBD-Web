@@ -76,7 +76,7 @@
     </nav>
     
     <div class="container">
-        <form id="nuevoRegistro" method="GET" enctype="multipart/form-data" class="pt-3 pb-5" >
+        <form id="nuevoRegistro" method="POST" action="InsertarCliente" enctype="multipart/form-data" class="pt-3 pb-5" >
             <div class="row ">
                 <!-- Datos basicos-->			
                 <div class="col-sm-12 col-md-6">
@@ -94,15 +94,15 @@
                     </div>
                     <div class="form-group">
                         <label for="email1">Segundo nombre</label>
-                        <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="segundo_nombre">
                     </div>
                     <div class="form-group ">
                         <label for="pass1">Primer apellido</label>
-                        <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Apellido">
                     </div>
                     <div class="form-group ">
                         <label for="pass1">Segundo apellido</label>
-                        <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" placeholder="Apellido">
+                        <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Apellido">
                     </div>
                     
                 </div>
@@ -112,19 +112,19 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group ">
                         <label for="pass2">Correo</label>
-                        <input type="email" class="form-control"  id="n_correo" name="n_correo" placeholder="ejemplo@restaurante.com">
+                        <input type="email" class="form-control"  id="correo" name="correo" placeholder="ejemplo@restaurante.com">
                     </div>
                     <div class="form-group ">
                         <label for="celphone">Fecha de nacimiento</label>
-                        <input type="text" class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="99/12/12">
+                        <input type="text" class="form-control" id="nacimiento" name="nacimiento" placeholder="99/12/12">
                     </div>
                     <div class="form-group ">
                         <label for="edad">Genero</label>
-                        <input type="text" class="form-control" id="o_genero" name="o_genero" placeholder="Género">
+                        <input type="text" class="form-control" id="genero" name="genero" placeholder="Género">
                     </div>				
                 </div> 
             </div>
-            <input type="button" value="Aceptar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
+            <input type="button" value="Agregar" class="btn btn-info btn-lg btn-block" onclick="submit();">  
         </form>
 
     </div>

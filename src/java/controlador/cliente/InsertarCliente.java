@@ -39,37 +39,37 @@ public class InsertarCliente extends HttpServlet {
         DBCliente clienteDB = new DBCliente();
         try {
             
-            /*long K_num_documento=(Integer.parseInt(request.getParameter("num_documento")));
+            /*int K_num_documento=Integer.parseInt(request.getParameter("num_documento"));
             String K_tipo_documento=(request.getParameter("tipo_documento"));
             String N_primer_nombre=(request.getParameter("primer_nombre"));
             String N_segundo_nombre=(request.getParameter("segundo_nombre"));
             String N_primer_apellido=(request.getParameter("primer_apellido"));
             String N_segundo_apellido=(request.getParameter("segundo_apellido"));
             String O_genero=(request.getParameter("genero"));
-            String F_nacimiento=(request.getParameter("nacimiento"));
+            //String F_nacimiento=(request.getParameter("nacimiento"));
             String N_correo=(request.getParameter("correo"));*/
             
             
             
-            /*c.setK_num_documento(K_num_documento);
-            c.setK_tipo_documento(K_tipo_documento);
-            c.setN_primer_nombre(N_primer_nombre);
-            c.setN_segundo_nombre(N_segundo_nombre);
-            c.setN_primer_apellido(N_primer_apellido);
-            c.setN_segundo_apellido(N_segundo_apellido);
-            c.setO_genero(O_genero);
-            c.setF_nacimiento(F_nacimiento);
-            c.setN_correo(N_correo);*/
-            c.setK_num_documento(234435);
-            c.setK_tipo_documento("CE");
-            c.setN_primer_nombre("nombre 1");
-            c.setN_segundo_nombre("nombre 2");
-            c.setN_primer_apellido("apellido 1");
-            c.setN_segundo_apellido("apellido 2");
-            c.setO_genero("genero");
-            //c.setF_nacimiento("2012-12-20");
-            c.setN_correo("nombre@gmail.com");
+            /*int K_num_documento=Integer.parseInt(request.getParameter("num_documento"));
+            String K_tipo_documento=(request.getParameter("tipo_documento"));
+            String N_primer_nombre=(request.getParameter("primer_nombre"));
+            String N_segundo_nombre=(request.getParameter("segundo_nombre"));
+            String N_primer_apellido=(request.getParameter("primer_apellido"));
+            String N_segundo_apellido=(request.getParameter("segundo_apellido"));
+            String O_genero=(request.getParameter("genero"));
+            //String F_nacimiento=(request.getParameter("nacimiento"));
+            String N_correo=(request.getParameter("correo"));*/
             
+            c.setK_num_documento(11134);
+            c.setK_tipo_documento("CC");
+            c.setN_primer_nombre("N_primer_nombre");
+            //c.setN_segundo_nombre(N_segundo_nombre);
+            c.setN_primer_apellido("N_primer_apellido");
+            //c.setN_segundo_apellido(N_segundo_apellido);
+            //c.setO_genero(O_genero);
+            c.setF_nacimiento("2020-12-07");//c.setF_nacimiento(F_nacimiento);
+            //c.setN_correo(N_correo);
             clienteDB.insertarCliente(c);            
             response.sendRedirect("listaclientes.jsp");
         }finally {            

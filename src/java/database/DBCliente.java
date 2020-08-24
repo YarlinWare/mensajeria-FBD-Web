@@ -50,12 +50,12 @@ public class DBCliente {
   
     public void insertarCliente(Cliente c) {
         
-        Date date = new Date();
+        /*Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("yyyy/MM/dd");
         String dia = Integer.toString(c.get(Calendar.DATE));
         String mes = Integer.toString(c.get(Calendar.MONTH));
         String annio = Integer.toString(c.get(Calendar.YEAR));
-        String fecha = annio+"-"+mes+":"+dia;
+        String fecha = annio+"-"+mes+":"+dia;*/
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("INSERT INTO cliente ("
                     + " k_num_documento,"
@@ -65,10 +65,9 @@ public class DBCliente {
                     + " n_primer_apellido,"
                     + " n_segundo_apellido,"
                     + " o_genero,"
-                    + " n_correo ,"
+                    + " n_correo )"
                     //+ "f_nacimiento "
                     + " values(?,?,?,?,?,?,?,?)");
-            
             pstm.setLong(1, c.getK_num_documento());
             pstm.setString(2, c.getK_tipo_documento());
             pstm.setString(3, c.getN_primer_nombre());
@@ -86,7 +85,22 @@ public class DBCliente {
         }
 
     }
-    
+    public void insertarCliente() {
+        try {
+            
+            PreparedStatement pstm = cn.getConexion().prepareStatement("INSERT INTO cliente ("
+                    + " k_num_documento,"
+                    + " k_tipo_documento,"
+                    + " n_primer_nombre,"
+                    + " n_primer_apellido) "
+                    + " values(1010101012,'CC','Nombre','Apellido')");           
+
+            pstm.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+    }
      public void actualizarCliente(Cliente c) {
 
         try {
