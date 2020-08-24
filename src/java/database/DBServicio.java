@@ -94,9 +94,9 @@ public class DBServicio {
                     + " k_num_documento_mensajero,"
                     + " k_tipo_documento_mensajero,"
                     + " f_fecha,"
-                    + " f_hora,"
-                    + " v_valor_servicio)"
-                    + " values(?,?,?,?,?,?,?,?)");
+                    + " f_hora)"
+                    //+ " v_valor_servicio)"
+                    + " values(?,?,?,?,?,?,?)");
             pstm.setLong(1, s.getK_id_tipo_paquete());
             pstm.setLong(2, s.getK_num_documento_usuario());
             pstm.setString(3, s.getK_tipo_documento_usuario());
@@ -104,7 +104,7 @@ public class DBServicio {
             pstm.setString(5, s.getK_tipo_documento_mensajero());
             pstm.setString(6, s.getF_fecha());
             pstm.setString(7, s.getF_hora());
-            pstm.setLong(8, s.getV_valor_servicio());
+           // pstm.setLong(8, s.getV_valor_servicio());
             
 
             pstm.executeUpdate();

@@ -10,7 +10,7 @@ package logica;
  * @author kjan
  */
 public class Mensajero {
-    int k_num_documento;
+    long k_num_documento;
     String k_tipo_documento;
     String n_primer_nombre;
     String n_segundo_nombre;
@@ -44,11 +44,11 @@ public class Mensajero {
     
     
 
-    public int getK_num_documento() {
+    public long getK_num_documento() {
         return k_num_documento;
     }
 
-    public void setK_num_documento(int k_num_documento) {
+    public void setK_num_documento(long k_num_documento) {
         this.k_num_documento = k_num_documento;
     }
 

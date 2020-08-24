@@ -116,7 +116,7 @@
                 <td><input type="text" id="n_segundo_apellido" name="n_segundo_apellido" value="<%= ((Cliente)session.getAttribute("cliente")).getN_segundo_apellido()%>"></td>
             </tr>
             <tr>
-                <td>Correo</td>
+                <td>Genero</td>
                 <td><input type="text" id="o_genero" name="o_genero" value="<%= ((Cliente)session.getAttribute("cliente")).getO_genero()%>"></td>
             </tr>
             <tr>
@@ -124,7 +124,7 @@
                 <td><input type="text" id="f_nacimiento" name="f_nacimiento" value="<%= ((Cliente)session.getAttribute("cliente")).getF_nacimiento()%>"></td>
             </tr>
             <tr>
-                <td>Género</td>
+                <td>Correo</td>
                 <td><input type="text" id="n_correo" name="n_correo" value="<%= ((Cliente)session.getAttribute("cliente")).getN_correo()%>"></td>
             </tr>
             <tr>
